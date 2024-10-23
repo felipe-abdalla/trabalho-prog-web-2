@@ -9,7 +9,7 @@
   <meta name="generator" content="Hugo 0.122.0">
   <title>Vitrine de Livraria</title>
 
-  <!-- ink do boodstrap -->
+  <!-- Link do boodstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -19,11 +19,11 @@
 
   <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Fiz um link para o arquivo css -->
+  <!-- Link para o arquivo css -->
   <link rel="stylesheet" href="css/style.css">
 
 
-  <!-- Custom styles for this template -->
+  <!-- CSS do carousel -->
   <link href="carousel.css" rel="stylesheet">
 </head>
 
@@ -48,6 +48,7 @@
     </symbol>
   </svg>
 
+  <!-- Botão para modo escuro no canto inferior direito da página -->
   <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
     <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
       aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
@@ -96,7 +97,7 @@
     </ul>
   </div>
 
-
+  <!-- Header com navbar -->
   <header data-bs-theme="dark">
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <div class="container-fluid">
@@ -129,8 +130,9 @@
     </nav>
   </header>
   <main>
-
+    <!-- Carousel -->
     <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+      <!-- Indicadores de página do carousel no centro inferior -->
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
           aria-label="Slide 1"></button>
@@ -138,6 +140,7 @@
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
       <div class="carousel-inner">
+        <!-- Imagem atual -->
         <div class="carousel-item active">
           <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
@@ -151,6 +154,7 @@
             </div>
           </div>
         </div>
+        <!-- Outra imagem -->
         <div class="carousel-item">
           <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
@@ -164,6 +168,7 @@
             </div>
           </div>
         </div>
+        <!-- Outra imagem -->
         <div class="carousel-item">
           <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
@@ -178,10 +183,12 @@
           </div>
         </div>
       </div>
+      <!-- Seta da esquerda -->
       <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
+      <!-- Seta da direita -->
       <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
@@ -197,17 +204,23 @@
 
       <!-- Three columns of text below the carousel -->
       <div class="row">
+        <!-- Primeiro card -->
         <div class="col-lg-4">
+          <!-- Imagem -->
           <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
             role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
             <title>Placeholder</title>
             <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
           </svg>
+          <!-- Titulo -->
           <h2 class="fw-normal">Heading</h2>
+          <!-- Descrição -->
           <p>Some representative placeholder content for the three columns of text below the carousel. This is the first
             column.</p>
+          <!-- Botão -->
           <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
+        </div>
+        <!-- Segundo card -->
         <div class="col-lg-4">
           <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
             role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
@@ -218,7 +231,8 @@
           <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.
           </p>
           <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
+        </div>
+        <!-- Terceiro card -->
         <div class="col-lg-4">
           <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
             role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
@@ -228,22 +242,29 @@
           <h2 class="fw-normal">Heading</h2>
           <p>And lastly this, the third column of representative placeholder content.</p>
           <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
+        </div>
+      </div>
 
 
       <!-- START THE FEATURETTES -->
 
+      <!-- Elemento para separar sessões -->
       <hr class="featurette-divider">
 
+      <!-- Primeira linha de feature -->
       <div class="row featurette">
+        <!-- Coluna de texto -->
         <div class="col-md-7">
+          <!-- Titulo -->
           <h2 class="featurette-heading fw-normal lh-1">First featurette heading. <span
               class="text-body-secondary">It’ll blow your mind.</span></h2>
+          <!-- Descricao -->
           <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose
             here.</p>
         </div>
+        <!-- Coluna de imagem -->
         <div class="col-md-5">
+          <!-- Imagem -->
           <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
             height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
             preserveAspectRatio="xMidYMid slice" focusable="false">
@@ -256,6 +277,7 @@
 
       <hr class="featurette-divider">
 
+      <!-- Segunda linha de feature -->
       <div class="row featurette">
         <div class="col-md-7 order-md-2">
           <h2 class="featurette-heading fw-normal lh-1">Oh yeah, it’s that good. <span class="text-body-secondary">See
@@ -276,6 +298,7 @@
 
       <hr class="featurette-divider">
 
+      <!-- Terceira linha de feature -->
       <div class="row featurette">
         <div class="col-md-7">
           <h2 class="featurette-heading fw-normal lh-1">And lastly, this one. <span
@@ -299,12 +322,14 @@
 
       <!-- /END THE FEATURETTES -->
 
-    </div><!-- /.container -->
+    </div>
 
 
     <!-- FOOTER -->
     <footer class="container">
+      <!-- Link para o topo da pagina -->
       <p class="float-end"><a href="#">Back to top</a></p>
+      <!-- Trademark -->
       <p>&copy; 2017–2024 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
     </footer>
   </main>
@@ -314,7 +339,5 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-
 
 </html>
