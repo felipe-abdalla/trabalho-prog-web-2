@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="pt-br" data-bs-theme="auto">
+
 <head>
   <script src="../assets/js/color-modes.js"></script>
   <meta charset="utf-8">
@@ -48,54 +49,7 @@
     </symbol>
   </svg>
 
-  <!-- Botão para modo escuro no canto inferior direito da página -->
-  <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-    <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
-      aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
-      <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
-        <use href="#circle-half"></use>
-      </svg>
-      <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-    </button>
-    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
-      <li>
-        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
-          aria-pressed="false">
-          <svg class="bi me-2 opacity-50" width="1em" height="1em">
-            <use href="#sun-fill"></use>
-          </svg>
-          Light
-          <svg class="bi ms-auto d-none" width="1em" height="1em">
-            <use href="#check2"></use>
-          </svg>
-        </button>
-      </li>
-      <li>
-        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
-          aria-pressed="false">
-          <svg class="bi me-2 opacity-50" width="1em" height="1em">
-            <use href="#moon-stars-fill"></use>
-          </svg>
-          Dark
-          <svg class="bi ms-auto d-none" width="1em" height="1em">
-            <use href="#check2"></use>
-          </svg>
-        </button>
-      </li>
-      <li>
-        <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
-          aria-pressed="true">
-          <svg class="bi me-2 opacity-50" width="1em" height="1em">
-            <use href="#circle-half"></use>
-          </svg>
-          Auto
-          <svg class="bi ms-auto d-none" width="1em" height="1em">
-            <use href="#check2"></use>
-          </svg>
-        </button>
-      </li>
-    </ul>
-  </div>
+
 
   <!-- Header com navbar -->
   <header data-bs-theme="dark">
@@ -129,7 +83,10 @@
       </div>
     </nav>
   </header>
+
+
   <main>
+
     <!-- Carousel -->
     <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
       <!-- Indicadores de página do carousel no centro inferior -->
@@ -200,8 +157,9 @@
   ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
-    <div class="container marketing">
 
+
+    <section class="container marketing">
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <!-- Primeiro card -->
@@ -246,96 +204,149 @@
       </div>
 
 
-      <!-- START THE FEATURETTES -->
+      <h2 class="text-center bg-white text-dark">Produtos que estão bombando</h2>
 
-      <!-- Elemento para separar sessões -->
-      <hr class="featurette-divider">
+      <div class="container row mx-auto g-4">
 
-      <!-- Primeira linha de feature -->
-      <div class="row featurette">
-        <!-- Coluna de texto -->
-        <div class="col-md-7">
-          <!-- Titulo -->
-          <h2 class="featurette-heading fw-normal lh-1">First featurette heading. <span
-              class="text-body-secondary">It’ll blow your mind.</span></h2>
-          <!-- Descricao -->
-          <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose
-            here.</p>
+
+        <div class="col-12 col-md-6 col-xxl-4">
+          <div class="card">
+            <img class="img-fluid" src="img/camisa.jpg" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <p>R$30,00</p>
+              <a href="#" class="btn btn-primary">Ver mais</a>
+            </div>
+          </div>
         </div>
-        <!-- Coluna de imagem -->
-        <div class="col-md-5">
-          <!-- Imagem -->
-          <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-            height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
-            preserveAspectRatio="xMidYMid slice" focusable="false">
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="var(--bs-secondary-bg)" /><text x="50%" y="50%"
-              fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
-          </svg>
+
+        <div class="col-12 col-md-6 col-xxl-4">
+          <div class="card">
+            <img class="img-fluid" src="img/calça.jpg" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <p>R$30,00</p>
+              <a href="#" class="btn btn-primary">Ver mais</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-xxl-4">
+          <div class="card">
+            <img class="img-fluid" src="img/tenis.jpg" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <p>R$30,00</p>
+              <a href="#" class="btn btn-primary">Ver mais</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-xxl-4">
+          <div class="card">
+            <img class="img-fluid" src="img/jaqueta.jpg" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <p>R$30,00</p>
+              <a href="#" class="btn btn-primary">Ver mais</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-xxl-4">
+          <div class="card">
+            <img class="img-fluid" src="img/oculos.png" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <p>R$30,00</p>
+              <a href="#" class="btn btn-primary">Ver mais</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-xxl-4">
+          <div class="card">
+            <img class="img-fluid" src="img/bolsa.jpg" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <p>R$30,00</p>
+              <a href="#" class="btn btn-primary">Ver mais</a>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <hr class="featurette-divider">
+    <section class="bg-black text-light ">
 
-      <!-- Segunda linha de feature -->
-      <div class="row featurette">
-        <div class="col-md-7 order-md-2">
-          <h2 class="featurette-heading fw-normal lh-1">Oh yeah, it’s that good. <span class="text-body-secondary">See
-              for yourself.</span></h2>
-          <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this
-            layout would work with some actual real-world content in place.</p>
-        </div>
-        <div class="col-md-5 order-md-1">
-          <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-            height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
-            preserveAspectRatio="xMidYMid slice" focusable="false">
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="var(--bs-secondary-bg)" /><text x="50%" y="50%"
-              fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
-          </svg>
+      <h2 class="text-center mt-4 mb-4">Conheça toda as nossas facilidades </h2>
+
+      <div class="d-flex flex-column align-items-center mt-4 pb-4">
+
+
+        <div class="container row mx-auto g-4">
+          <div class="col-12 col-md-12 col-xxl-4">
+            <div class="divs-facilidades mx-auto d-flex mb-3">
+              <div> <i class="bi bi-x-diamond icons m-3 text-warning"></i></div>
+              <div>
+                <div class=" mb-1 text-warning">PAGUE PELO PIX</div>
+                <div class="texto-menor">Ganhe 5% OFF em
+                  pagamentos via PIX
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-12 col-xxl-4">
+            <div class="divs-facilidades mx-auto d-flex mb-3">
+              <div> <i class="bi bi-arrow-repeat icons m-3 text-warning"></i></div>
+              <div>
+                <div class=" mb-1 text-warning text-warning">TROCA GRATIS</div>
+                <div class="texto-menor ">fique livre para trocar em até
+                  30 dias
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-12 col-xxl-4">
+            <div class="divs-facilidades mx-auto d-flex mb-3">
+              <div><i class="bi bi-flower1 icons m-3 text-warning"></i></div>
+              <div>
+                <div class=" mb-1 text-warning">SUSTENTABILIDADE</div>
+                <div class="texto-menor">moda responsável , que respeita
+                  o meio ambiente
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <hr class="featurette-divider">
-
-      <!-- Terceira linha de feature -->
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading fw-normal lh-1">And lastly, this one. <span
-              class="text-body-secondary">Checkmate.</span></h2>
-          <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really
-            intended to be actually read, simply here to give you a better view of what this would look like with some
-            actual content. Your content.</p>
-        </div>
-        <div class="col-md-5">
-          <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-            height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
-            preserveAspectRatio="xMidYMid slice" focusable="false">
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="var(--bs-secondary-bg)" /><text x="50%" y="50%"
-              fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
-          </svg>
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <!-- /END THE FEATURETTES -->
-
-    </div>
-
-
-    <!-- FOOTER -->
-    <footer class="container">
-      <!-- Link para o topo da pagina -->
-      <p class="float-end"><a href="#">Back to top</a></p>
-      <!-- Trademark -->
-      <p>&copy; 2017–2024 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-    </footer>
   </main>
-  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
-</body>
+  <footer class="text-center">
+    <p class="py-3 my-0 bg-black text-light">
+      2023 <i class="bi bi-c-circle"></i> Desenvolvido por Alura | Projeto
+      fictício sem fins comerciais.
+    </p>
+  </footer>
+  
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+</body> 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
