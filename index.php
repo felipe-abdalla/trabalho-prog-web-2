@@ -325,7 +325,7 @@
             <div class="divs-facilidades mx-auto d-flex mb-3">
               <div><i class="bi bi-flower1 icons m-3 text-warning"></i></div>
               <div>
-                <div class=" mb-1 text-warning">EDITORAS</div>
+                <div class=" mb-1 text-warning">Sustentabilidade</div>
                 <div class="texto-menor">moda responsável , que respeita
                   o meio ambiente
                 </div>
