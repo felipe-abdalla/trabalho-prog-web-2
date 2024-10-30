@@ -142,12 +142,12 @@
       <!-- Seta da esquerda -->
       <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
+        <span class="visually-hidden">Anterior</span>
       </button>
       <!-- Seta da direita -->
       <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
+        <span class="visually-hidden">Proximo</span>
       </button>
     </div>
 
@@ -201,7 +201,7 @@
       </div>
 
 
-      <h2 class="text-center bg-white text-dark">Produtos que estão bombando</h2>
+      <h2 class="text-center bg-white text-dark">Livros disponíveis</h2>
 
       <div class="container row mx-auto g-4">
 
