@@ -53,38 +53,41 @@
         <br>
         <br>
         <br>
-        <section class="container" >
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">NOME</th>
-                        <th scope="col">SOBRENOME</th>
-                        <th scope="col">XXXXXX</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!--FAZER AQUI O WHILE BUSCANDO NO BD-->
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>TESTE</td>
-                        <td>TESTE</td>
-                        <td>@fat</td>
-                    </tr>
-                </tbody>
-            </table>
+        <section class="container card">
+            <div class="card-body">
+                <h5 class="card-title">Autores</h5>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">NOME</th>
+                            <th scope="col">SOBRENOME</th>
+                            <th scope="col">XXXXXX</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--FAZER AQUI O WHILE BUSCANDO NO BD-->
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>TESTE</td>
+                            <td>TESTE</td>
+                            <td>@fat</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>  
         </section>
     </main>
 
