@@ -88,7 +88,7 @@
   <main>
 
     <!-- Carousel -->
-    <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+    <div id="myCarousel" class="carousel slide mb-6 carousel_body" data-bs-ride="carousel">
       <!-- Indicadores de página do carousel no centro inferior -->
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
@@ -289,13 +289,17 @@
       </div>
     </section>
 
+    
+  </main>
+  
+  <footer class="text-center">
     <section class="bg-black text-light ">
-
+  
       <h2 class="text-center mt-4 mb-4">Conheça toda as nossas facilidades </h2>
-
+  
       <div class="d-flex flex-column align-items-center mt-4 pb-4">
-
-
+  
+  
         <div class="container row mx-auto g-4">
           <div class="col-12 col-md-12 col-xxl-4">
             <div class="divs-facilidades mx-auto d-flex mb-3">
@@ -308,7 +312,7 @@
               </div>
             </div>
           </div>
-
+  
           <div class="col-12 col-md-12 col-xxl-4">
             <div class="divs-facilidades mx-auto d-flex mb-3">
               <div> <i class="bi bi-arrow-repeat icons m-3 text-warning"></i></div>
@@ -320,7 +324,7 @@
               </div>
             </div>
           </div>
-
+  
           <div class="col-12 col-md-12 col-xxl-4">
             <div class="divs-facilidades mx-auto d-flex mb-3">
               <div><i class="bi bi-flower1 icons m-3 text-warning"></i></div>
@@ -335,14 +339,10 @@
         </div>
       </div>
     </section>
-
-  </main>
-
-  <footer class="text-center">
-    <p class="py-3 my-0 bg-black text-light">
+    <section class="py-3 my-0 bg-black text-light">
       2023 <i class="bi bi-c-circle"></i> Desenvolvido por Alura | Projeto
       fictício sem fins comerciais.
-    </p>
+    </section>
   </footer>
   
   <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
