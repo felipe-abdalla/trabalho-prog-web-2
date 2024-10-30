@@ -23,10 +23,10 @@
 
 
   <!-- CSS do carousel -->
-  <link href="./carousel.css" rel="stylesheet">
+  <link href="./carrossel.css" rel="stylesheet">
 </head>
 
-<body>
+<body id="body">
   <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
     <symbol id="check2" viewBox="0 0 16 16">
       <path
@@ -49,36 +49,39 @@
 
   <!-- Header com navbar -->
   <header data-bs-theme="dark">
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Inventário</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav me-auto mb-2 mb-md-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./index.php">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./Generos.php">Generos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./Editoras.php">Editoras</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./Gerenciar.php">Gerenciar</a>
-            </li>
-          </ul>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Procurar" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Buscar</button>
-          </form>
-        </div>
-      </div>
-    </nav>
-  </header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Inventário</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./index.php">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./Autores.php">Autores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./Generos.php">Generos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./Editoras.php">Editoras</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./Gerenciar.php">Gerenciar</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Procurar" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
 
 
   <main>
@@ -101,9 +104,9 @@
           </svg>
           <div class="container">
             <div class="carousel-caption text-start">
-              <h1>Example headline.</h1>
-              <p class="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
-              <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+              <h1>NOME DE AUTOR</h1>
+              <p class="opacity-75">DADOS OU LIVROS DO AUTOR</p>
+              <p><a class="btn btn-lg btn-primary" href="#">Ver outros autores</a></p>
             </div>
           </div>
         </div>
@@ -115,9 +118,9 @@
           </svg>
           <div class="container">
             <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Some representative placeholder content for the second slide of the carousel.</p>
-              <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+              <h1>GENERO</h1>
+              <p>DADOS OU LIVROS DESSE GENERO </p>
+              <p><a class="btn btn-lg btn-primary" href="#">Ver outros generos</a></p>
             </div>
           </div>
         </div>
@@ -129,9 +132,9 @@
           </svg>
           <div class="container">
             <div class="carousel-caption text-end">
-              <h1>One more for good measure.</h1>
-              <p>Some representative placeholder content for the third slide of this carousel.</p>
-              <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+              <h1>NOME DE EDITORA</h1>
+              <p>DADOS OU LIVROS DA EDITORA</p>
+              <p><a class="btn btn-lg btn-primary" href="#">Ver outras editoras</a></p>
             </div>
           </div>
         </div>
