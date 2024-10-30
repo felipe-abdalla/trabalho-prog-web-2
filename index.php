@@ -8,9 +8,9 @@
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.122.0">
-  <title>Vitrine de Livraria</title>
+  <title>Inicio</title>
 
-  <!-- Link do boodstrap -->
+  <!-- Link do bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -18,14 +18,12 @@
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
-  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
   <!-- Link para o arquivo css -->
   <link rel="stylesheet" href="css/style.css">
 
 
   <!-- CSS do carousel -->
-  <link href="carousel.css" rel="stylesheet">
+  <link href="./carousel.css" rel="stylesheet">
 </head>
 
 <body>
@@ -48,8 +46,6 @@
         d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
     </symbol>
   </svg>
-
-
 
   <!-- Header com navbar -->
   <header data-bs-theme="dark">
@@ -88,7 +84,7 @@
   <main>
 
     <!-- Carousel -->
-    <div id="myCarousel" class="carousel slide mb-6 carousel_body" data-bs-ride="carousel">
+    <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
       <!-- Indicadores de página do carousel no centro inferior -->
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
@@ -167,14 +163,13 @@
           <!-- Imagem -->
           <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
             role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <title>Placeholder</title>
+            <title>TITULO DE LIVRO</title>
             <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
           </svg>
           <!-- Titulo -->
-          <h2 class="fw-normal">Heading</h2>
+          <h2 class="fw-normal">TITULO DE LIVRO</h2>
           <!-- Descrição -->
-          <p>Some representative placeholder content for the three columns of text below the carousel. This is the first
-            column.</p>
+          <p>AUTOR GENERO E EDITORA</p>
           <!-- Botão -->
           <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
         </div>
@@ -182,23 +177,22 @@
         <div class="col-lg-4">
           <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
             role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <title>Placeholder</title>
+            <title>TITULO DE LIVRO</title>
             <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
           </svg>
-          <h2 class="fw-normal">Heading</h2>
-          <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.
-          </p>
+          <h2 class="fw-normal">TITULO DE LIVRO</h2>
+          <p>AUTOR GENERO E EDITORA</p>
           <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
         </div>
         <!-- Terceiro card -->
         <div class="col-lg-4">
           <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
             role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <title>Placeholder</title>
+            <title>TITULO DE LIVRO</title>
             <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
           </svg>
-          <h2 class="fw-normal">Heading</h2>
-          <p>And lastly this, the third column of representative placeholder content.</p>
+          <h2 class="fw-normal">TITULO DE LIVRO</h2>
+          <p>AUTOR GENERO E EDITORA</p>
           <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
         </div>
       </div>
@@ -208,14 +202,12 @@
 
       <div class="container row mx-auto g-4">
 
-
         <div class="col-12 col-md-6 col-xxl-4">
           <div class="card">
             <img class="img-fluid" src="img/camisa.jpg" alt="">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                card's content.</p>
+              <h5 class="card-title">TITULO DE LIVRO</h5>
+              <p class="card-text">AUTOR GENERO E EDITORA</p>
               <p>R$30,00</p>
               <a href="#" class="btn btn-primary">Ver mais</a>
             </div>
@@ -226,9 +218,8 @@
           <div class="card">
             <img class="img-fluid" src="img/calça.jpg" alt="">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                card's content.</p>
+              <h5 class="card-title">TITULO DE LIVRO</h5>
+              <p class="card-text">AUTOR GENERO E EDITORA</p>
               <p>R$30,00</p>
               <a href="#" class="btn btn-primary">Ver mais</a>
             </div>
@@ -239,9 +230,8 @@
           <div class="card">
             <img class="img-fluid" src="img/tenis.jpg" alt="">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                card's content.</p>
+              <h5 class="card-title">TITULO DE LIVRO</h5>
+              <p class="card-text">AUTOR GENERO E EDITORA</p>
               <p>R$30,00</p>
               <a href="#" class="btn btn-primary">Ver mais</a>
             </div>
@@ -252,9 +242,8 @@
           <div class="card">
             <img class="img-fluid" src="img/jaqueta.jpg" alt="">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                card's content.</p>
+              <h5 class="card-title">TITULO DE LIVRO</h5>
+              <p class="card-text">AUTOR GENERO E EDITORA</p>
               <p>R$30,00</p>
               <a href="#" class="btn btn-primary">Ver mais</a>
             </div>
@@ -265,9 +254,8 @@
           <div class="card">
             <img class="img-fluid" src="img/oculos.png" alt="">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                card's content.</p>
+              <h5 class="card-title">TITULO DE LIVRO</h5>
+              <p class="card-text">AUTOR GENERO E EDITORA</p>
               <p>R$30,00</p>
               <a href="#" class="btn btn-primary">Ver mais</a>
             </div>
@@ -278,9 +266,8 @@
           <div class="card">
             <img class="img-fluid" src="img/bolsa.jpg" alt="">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                card's content.</p>
+              <h5 class="card-title">TITULO DE LIVRO</h5>
+              <p class="card-text">AUTOR GENERO E EDITORA</p>
               <p>R$30,00</p>
               <a href="#" class="btn btn-primary">Ver mais</a>
             </div>
@@ -293,9 +280,9 @@
   </main>
   
   <footer class="text-center">
-    <section class="bg-black text-light ">
+    <section class="bg-dark text-light ">
   
-      <h2 class="text-center mt-4 mb-4">Conheça toda as nossas facilidades </h2>
+      <h2 class="text-center mt-4 mb-4">Conheça a nossa plataforma</h2>
   
       <div class="d-flex flex-column align-items-center mt-4 pb-4">
   
@@ -305,9 +292,8 @@
             <div class="divs-facilidades mx-auto d-flex mb-3">
               <div> <i class="bi bi-x-diamond icons m-3 text-warning"></i></div>
               <div>
-                <div class=" mb-1 text-warning">PAGUE PELO PIX</div>
-                <div class="texto-menor">Ganhe 5% OFF em
-                  pagamentos via PIX
+                <div class=" mb-1 text-warning">EXIBIÇÃO DE LIVROS</div>
+                <div class="texto-menor">Faça a divulgação de livros conosco.
                 </div>
               </div>
             </div>
@@ -317,9 +303,8 @@
             <div class="divs-facilidades mx-auto d-flex mb-3">
               <div> <i class="bi bi-arrow-repeat icons m-3 text-warning"></i></div>
               <div>
-                <div class=" mb-1 text-warning text-warning">TROCA GRATIS</div>
-                <div class="texto-menor ">fique livre para trocar em até
-                  30 dias
+                <div class=" mb-1 text-warning text-warning">AUTORES, GÊNEROS E EDITORAS</div>
+                <div class="texto-menor ">Exibimos diversos autores e gêneros diversos. Além da divulgação de editoras. 
                 </div>
               </div>
             </div>
@@ -329,9 +314,8 @@
             <div class="divs-facilidades mx-auto d-flex mb-3">
               <div><i class="bi bi-flower1 icons m-3 text-warning"></i></div>
               <div>
-                <div class=" mb-1 text-warning">Sustentabilidade</div>
-                <div class="texto-menor">moda responsável , que respeita
-                  o meio ambiente
+                <div class=" mb-1 text-warning">GERENCIAMENTO</div>
+                <div class="texto-menor">Faça o cadastro e atualização dos dados na página de gerenciamento.
                 </div>
               </div>
             </div>
@@ -339,8 +323,9 @@
         </div>
       </div>
     </section>
-    <section class="py-3 my-0 bg-black text-light">
-      2023 <i class="bi bi-c-circle"></i> Desenvolvido por Alura | Projeto
+
+    <section class="py-3 my-0 bg-dark text-light">
+      2024 <i class="bi bi-c-circle"></i> Desenvolvido por TADS | Projeto
       fictício sem fins comerciais.
     </section>
   </footer>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadstro Livro</title>
+    <title>Editoras</title>
 </head>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -54,13 +54,14 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">EDITORA</th>
+                        <th scope="col">CNPJ</th>
+                        <th scope="col">ENDEREÇO</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <!--FAZER AQUI O WHILE BUSCANDO NO BD-->
                     <tr>
                         <th scope="row">1</th>
                         <td>Mark</td>
@@ -75,16 +76,14 @@
                     </tr>
                     <tr>
                         <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
+                        <td>TESTE</td>
+                        <td>TESTE</td>
+                        <td>@fat</td>
                     </tr>
                 </tbody>
             </table>
         </section>
     </main>
-
-
-
 
 </body>
 
