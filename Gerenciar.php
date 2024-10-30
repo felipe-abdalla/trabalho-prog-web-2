@@ -53,7 +53,7 @@
   <!--OPÇÕES DE CADASTRO-->
     <section class="container text-center">
       <div class="center-align btn-group">
-        <a href="#" class="btn btn-outline-dark">Cadastrar Livro</a>
+        <a href="cadastrarLivro.html" class="btn btn-outline-dark">Cadastrar Livro</a>
         <a href="cadastrarAutor.html" class="btn btn-outline-dark">Cadastrar Autor</a>
         <a href="cadastrarGenero.html" class="btn btn-outline-dark">Cadastrar Genero</a>
         <a href="cadastrarEditora.html" class="btn btn-outline-dark">Cadastrar Editora</a>
