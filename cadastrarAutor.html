@@ -54,14 +54,14 @@
     <section class="container">
       <h2>Cadastro de Autor</h2>
       <br>
-      <form class="row g-3" method="get" action="gerenciarAutor.php">
+      <form class="row g-3" action="gerenciarAutor.php" method="GET">
         <div class="col-12">
           <label for="primeiroNomeAutor" class="form-label">Nome</label>
-          <input type="text" class="form-control" id="primeiroNomeAutor" placeholder="Digite o primeiro nome do autor" required>
+          <input type="text" class="form-control" id="primeiroNomeAutor" name="primeiroNomeAutor" placeholder="Digite o primeiro nome do autor" required>
         </div>
         <div class="col-12">
           <label for="ultimoNomeAutor" class="form-label">Último nome</label>
-          <input type="text" class="form-control" id="ultimoNomeAutor" placeholder="Digite o último nome do autor">
+          <input type="text" class="form-control" id="ultimoNomeAutor" name="ultimoNomeAutor" placeholder="Digite o último nome do autor">
         </div>
         <div class="col-12">
           <button type="submit" class="btn btn-dark">Cadastrar</button>
