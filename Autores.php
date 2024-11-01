@@ -67,6 +67,32 @@
                     </thead>
                     <tbody>
                         <!--FAZER AQUI O WHILE BUSCANDO NO BD-->
+                        <?php
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "root";
+                        $dbname = "biblioteca_trabalho";
+
+                        // Create connection
+                        $conn = new mysqli($servername, $username, $password, $dbname);
+                        // Check connection
+                        if ($conn->connect_error) {
+                            die("Connection failed: " . $conn->connect_error);
+                        }
+
+                        $sql = "SELECT id, primeiro_nome, ultimo_nome FROM autor";
+                        $result = $conn->query($sql);
+
+                        if ($result->num_rows > 0) {
+                            // output data of each row
+                            while ($row = $result->fetch_assoc()) {
+                                echo "id: " . $row["id"] . " - Name: " . $row["primeiro_nome"] . " " . $row["ultimo_nome"] . "<br>";
+                            }
+                        } else {
+                            echo "0 results";
+                        }
+                        $conn->close();
+                        ?>
                         <tr>
                             <th scope="row">1</th>
                             <td>Mark</td>
@@ -87,7 +113,7 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>  
+            </div>
         </section>
     </main>
 
