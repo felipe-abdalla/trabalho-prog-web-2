@@ -50,7 +50,7 @@
     <section class="container">
       <h2>Cadastro de Livro</h2>
       <br>
-      <form class="row g-3">
+      <form class="row g-3" action="gerenciarLivro.php" method="POST">
         <div class="col-12">
           <label for="nomeLivro" class="form-label">Livro</label>
           <input type="text" class="form-control" id="nomeLivro" name="nomeLivro" placeholder="Digite o título do livro"
@@ -67,8 +67,8 @@
             placeholder="Digite o a quatidade de exemplares" required>
         </div>
         <div class="col-6">
-          <label for="dataPublicacaoLivro" class="form-label">Data de Publicação</label>
-          <input type="date" class="form-control" id="dataPublicacaoLivro" name="dataPublicacaoLivro">
+          <label for="anoPublicacaoLivro" class="form-label">Ano de Publicação</label>
+          <input type="number" class="form-control" id="anoPublicacaoLivro" name="anoPublicacaoLivro">
         </div>
         <div class="col-6">
           <label for="numeroEdicaoLivro" class="form-label">Número da Edição</label>
@@ -92,19 +92,19 @@
         }
 
         // Consulta SQL para buscar todos os autores
-        $sql = "SELECT primeiro_nome FROM autor";
+        $sql = "SELECT ID, primeiro_nome FROM autor";
         $result = $conn->query($sql);
         ?>
 
         <div class="col-md-4">
           <label for="autorLivro" class="form-label">Autor</label>
-          <select id="autorLivro" class="form-select" name="autor">
+          <select id="autorLivro" class="form-select" name="autorLivroSelect">
             <option selected>Escolha um autor...</option>
             <?php
             // Loop para percorrer os resultados e exibir cada autor em um <option>
             if ($result->num_rows > 0) {
               while ($row = $result->fetch_assoc()) {
-                echo "<option value='" . $row['primeiro_nome'] . "'>" . $row['primeiro_nome'] . "</option>";
+                echo "<option value='" . $row['ID'] . "'>" . $row['primeiro_nome'] . "</option>";
               }
             } else {
               echo "<option value=''>Nenhum autor cadastrado</option>";
@@ -135,22 +135,22 @@
         }
 
         // Consulta SQL para buscar todos os autores
-        $sql = "SELECT genero FROM genero";
+        $sql = "SELECT ID, genero FROM genero";
         $result = $conn->query($sql);
         ?>
 
         <div class="col-md-4">
-          <label for=generoLivro" class="form-label">Gênero</label>
-          <select id="generoLivro" class="form-select">
+          <label for="generoLivro" class="form-label">Gênero</label>
+          <select id="generoLivro" class="form-select" name="generoLivroSelect">
             <option selected>Escolha um gênero...</option>
             <?php
             // Loop para percorrer os resultados e exibir cada autor em um <option>
             if ($result->num_rows > 0) {
               while ($row = $result->fetch_assoc()) {
-                echo "<option value='" . $row['genero'] . "'>" . $row['genero'] . "</option>";
+                echo "<option value='" . $row['ID'] . "'>" . $row['genero'] . "</option>";
               }
             } else {
-              echo "<option value=''>Nenhum autor cadastrado</option>";
+              echo "<option value=''>Nenhum gênero cadastrado</option>";
             }
             ?>
           </select>
@@ -179,22 +179,22 @@
         }
 
         // Consulta SQL para buscar todos os autores
-        $sql = "SELECT editora FROM editora";
+        $sql = "SELECT ID, editora FROM editora";
         $result = $conn->query($sql);
         ?>
 
         <div class="col-md-4">
-          <label for=editoraLivro" class="form-label">Editora</label>
-          <select id="editoraLivro" class="form-select">
+          <label for="editoraLivro" class="form-label">Editora</label>
+          <select id="editoraLivro" class="form-select" name="editoraLivroSelect">
             <option selected>Escolha um gênero...</option>
             <?php
             // Loop para percorrer os resultados e exibir cada autor em um <option>
             if ($result->num_rows > 0) {
               while ($row = $result->fetch_assoc()) {
-                echo "<option value='" . $row['editora'] . "'>" . $row['editora'] . "</option>";
+                echo "<option value='" . $row['ID'] . "'>" . $row['editora'] . "</option>";
               }
             } else {
-              echo "<option value=''>Nenhum autor cadastrado</option>";
+              echo "<option value=''>Nenhuma editora cadastrada</option>";
             }
             ?>
           </select>

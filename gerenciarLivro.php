@@ -7,14 +7,12 @@
   $nomeLivro = $_POST['nomeLivro'];
   $isbnLivro = $_POST['isbnLivro'];
   $qtdLivro = $_POST['qtdLivro'];
-  //$dataPublicacaoLivro = $_POST['dataPublicacaoLivro'];
+  $anoPublicacaoLivro = $_POST['anoPublicacaoLivro'];
   $numeroEdicaoLivro = $_POST['numeroEdicaoLivro'];
-  //$bairroEditora = $_POST['bairroEditora'];
-  //$cepEditora = $_POST['cepEditora'];
-  $autor_ID = 13;
-  $genero_ID = 6;
-  $editora_ID = 2;
-  $dataPublicacaoLivro = '20200101';
+
+  $autor_ID = $_POST['autorLivroSelect'];
+  $genero_ID = $_POST['generoLivroSelect'];
+  $editora_ID = $_POST['editoraLivroSelect'];
 
   // Create connection
   $conn = new mysqli($servername, $username, $password, $dbname);
@@ -23,12 +21,12 @@
     die("Falha na conexão: " . $conn->connect_error);
   }
 
-  $sql = "INSERT INTO livro (isbn, livro, qtd, data_publicacao, nro_edicao, autor_ID, genero_ID, editora_ID)
-  VALUES ('" . $isbnLivro . "', '" . $nomeLivro . "', '" . $qtdLivro . "', '" . $dataPublicacaoLivro . "',
+  $sql = "INSERT INTO livro (isbn, livro, qtd, ano_publicacao, nro_edicao, autor_ID, genero_ID, editora_ID)
+  VALUES ('" . $isbnLivro . "', '" . $nomeLivro . "', '" . $qtdLivro . "', '" . $anoPublicacaoLivro . "',
   '" . $numeroEdicaoLivro . "', '" . $autor_ID . "', '" . $genero_ID . "', '" . $editora_ID . "')";
 
   if ($conn->query($sql) === TRUE) {
-    header("Location: cadastrarLivro.html");
+    header("Location: cadastrarLivro.php");
   } else {
     echo "Erro ao efetuar cadastro: " . $sql . "<br>" . $conn->error;
     echo "<a class='btn btn-dark' href='./Gerenciar.php'>Voltar</a>";

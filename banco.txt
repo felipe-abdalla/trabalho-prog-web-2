@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `biblioteca_trabalho`.`livro` (
   `isbn` VARCHAR(255) NOT NULL,
   `livro` VARCHAR(255) NOT NULL,
   `qtd` INT NOT NULL,
-  `data_publicacao` DATE NOT NULL,
+  `ano_publicacao` INT NOT NULL,
   `nro_edicao` INT NOT NULL,
   `autor_ID` INT NOT NULL,
   `genero_ID` INT NOT NULL,
