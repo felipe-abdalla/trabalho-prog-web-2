@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
@@ -27,22 +27,18 @@
               <a class="nav-link active" aria-current="page" href="./index.php">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./Autores.php">Autores</a>
+              <a class="nav-link active" aria-current="page" href="./exibirAutores.php">Autores</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./Generos.php">Generos</a>
+              <a class="nav-link active" aria-current="page" href="./exibirGeneros.php">Generos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./Editoras.php">Editoras</a>
+              <a class="nav-link active" aria-current="page" href="./exibirEditoras.php">Editoras</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="./Gerenciar.php">Gerenciar</a>
             </li>
           </ul>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Procurar" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Buscar</button>
-          </form>
         </div>
       </div>
     </nav>
@@ -50,7 +46,7 @@
 
   <main>
     <br><br><br><br><br>
-  <!--OPÇÕES DE CADASTRO-->
+  <!--BOTÕES DE CADASTRO-->
     <section class="container text-center">
       <div class="center-align btn-group">
         <a href="cadastrarLivro.html" class="btn btn-outline-dark">Cadastrar Livro</a>
@@ -125,137 +121,167 @@
 
     <br>
     <!--TABELA DE EXIBIÇÃO DOS AUTORES CADASTRADOS-->
-    <section class="container card">
-      <div class="card-body">
-        <h5 class="card-title">Autores</h5>
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">NOME</th>
-              <th scope="col">SOBRENOME</th>
-              <th scope="col">AÇÕES</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!--FAZER AQUI O WHILE BUSCANDO NO BD-->
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td><a href="#">ALTERAR</a></td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td><a href="#">ALTERAR</a></td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>TESTE</td>
-              <td>TESTE</td>
-              <td><a href="#">ALTERAR</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+      <section class="container card">
+            <div class="card-body">
+                <h5 class="card-title">Autores</h5>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">PRIMEIRO NOME</th>
+                            <th scope="col">ÚLTIMO NOME</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--CONEXÃO COM O BANCO E WHILE BUSCANDO NO BD-->
+                        <?php
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "root";
+                        $dbname = "biblioteca_trabalho";
+
+                        // Create connection
+                        $conn = new mysqli($servername, $username, $password, $dbname);
+                        // Check connection
+                        if ($conn->connect_error) {
+                            die("Connection failed: " . $conn->connect_error);
+                        }
+
+                        $sql = "SELECT id, primeiro_nome, ultimo_nome FROM autor";
+                        $result = $conn->query($sql);
+
+                        if ($result->num_rows > 0) {
+                            // output data of each row
+                            while ($row = $result->fetch_assoc()) {
+                                echo "<tr>
+                                <th scope='row'>" . $row["id"] . "</th> 
+                                <td>" . $row["primeiro_nome"] . "</td>
+                                <td>". $row["ultimo_nome"] ."</td>
+                                </tr>";
+                            }
+                        } else {
+                            echo "<tr>
+                            <td>Nenhum registro encontrado</td>
+                            <td></td>
+                            <td></td>
+                            </tr>";
+                        }
+                        $conn->close();
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
     <br>
     <!--TABELA DE EXIBIÇÃO DOS GENEROS CADASTRADOS-->
     <section class="container card">
-      <div class="card-body">
-        <h5 class="card-title">Generos</h5>
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">GENERO</th>
-              <th scope="col">AÇÕES</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!--FAZER AQUI O WHILE BUSCANDO NO BD-->
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td><a href="#">ALTERAR</a></td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td><a href="#">ALTERAR</a></td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>TESTE</td>
-              <td><a href="#">ALTERAR</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+            <div class="card-body">
+                <h5 class="card-title">Gêneros</h5>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">GÊNERO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--CONEXÃO COM O BANCO E WHILE BUSCANDO NO BD-->
+                        <?php
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "root";
+                        $dbname = "biblioteca_trabalho";
+
+                        // Create connection
+                        $conn = new mysqli($servername, $username, $password, $dbname);
+                        // Check connection
+                        if ($conn->connect_error) {
+                            die("Connection failed: " . $conn->connect_error);
+                        }
+
+                        $sql = "SELECT id, genero FROM genero";
+                        $result = $conn->query($sql);
+
+                        if ($result->num_rows > 0) {
+                            // output data of each row
+                            while ($row = $result->fetch_assoc()) {
+                                echo "<tr>
+                                <th scope='row'>" . $row["id"] . "</th> 
+                                <td>" . $row["genero"] . "</td>
+                                </tr>";
+                            }
+                        } else {
+                            echo "<tr>
+                            <td>Nenhum registro encontrado</td>
+                            <td></td>
+                            </tr>";
+                        }
+                        $conn->close();
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
     <br>
   <!--TABELA DE EXIBIÇÃO DAS EDITORAS CADASTRADAS-->
     <section class="container card">
-      <div class="card-body">
-        <h5 class="card-title">Editoras</h5>
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">EDITORA</th>
-              <th scope="col">PAIS</th>
-              <th scope="col">CIDADE</th>
-              <th scope="col">BAIRRO</th>
-              <th scope="col">RUA</th>
-              <th scope="col">CEP</th>
-              <th scope="col">CNPJ</th>
-              <th scope="col">AÇÕES</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!--FAZER AQUI O WHILE BUSCANDO NO BD-->
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>Otto</td>
-              <td>Otto</td>
-              <td>Otto</td>
-              <td>Otto</td>
-              <td><a href="#">ALTERAR</a></td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-              <td>Otto</td>
-              <td>Otto</td>
-              <td>Otto</td>
-              <td>Otto</td>
-              <td><a href="#">ALTERAR</a></td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>TESTE</td>
-              <td>TESTE</td>
-              <td>@fat</td>
-              <td>Otto</td>
-              <td>Otto</td>
-              <td>Otto</td>
-              <td>Otto</td>
-              <td><a href="#">ALTERAR</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+            <div class="card-body">
+                <h5 class="card-title">Editoras</h5>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">EDITORA</th>
+                            <th scope="col">CNPJ</th>
+                            <th scope="col">ENDEREÇO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--CONEXÃO COM O BANCO E WHILE BUSCANDO NO BD-->
+                        <?php
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "root";
+                        $dbname = "biblioteca_trabalho";
 
+                        // Create connection
+                        $conn = new mysqli($servername, $username, $password, $dbname);
+                        // Check connection
+                        if ($conn->connect_error) {
+                            die("Connection failed: " . $conn->connect_error);
+                        }
+
+                        $sql = "select id, editora, cnpj, concat(rua,', ', cidade,', ', bairro,', ', cep,', ', pais) as endereco from biblioteca_trabalho.editora;";
+                        $result = $conn->query($sql);
+
+                        if ($result->num_rows > 0) {
+                            // output data of each row
+                            while ($row = $result->fetch_assoc()) {
+                                echo "<tr>
+                                <th scope='row'>" . $row["id"] . "</th> 
+                                <td>" . $row["editora"] . "</td>
+                                <td>". $row["cnpj"] ."</td>
+                                <td>". $row["endereco"] ."</td>
+                                </tr>";
+                            }
+                        } else {
+                            echo "<tr>
+                            <td>Nenhum registro encontrado</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            </tr>";
+                        }
+                        $conn->close();
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+  
   </main>
 
 </body>

@@ -62,22 +62,18 @@
                             <a class="nav-link active" aria-current="page" href="./index.php">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./Autores.php">Autores</a>
+                            <a class="nav-link active" aria-current="page" href="./exibirAutores.php">Autores</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./Generos.php">Generos</a>
+                            <a class="nav-link active" aria-current="page" href="./exibirGeneros.php">Generos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./Editoras.php">Editoras</a>
+                            <a class="nav-link active" aria-current="page" href="./exibirEditoras.php">Editoras</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="./Gerenciar.php">Gerenciar</a>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Procurar" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Buscar</button>
-                    </form>
                 </div>
             </div>
         </nav>

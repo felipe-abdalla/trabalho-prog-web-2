@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generos</title>
+    <title>Autores</title>
 </head>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -27,22 +27,18 @@
                             <a class="nav-link active" aria-current="page" href="./index.php">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./Autores.php">Autores</a>
+                            <a class="nav-link active" aria-current="page" href="./exibirAutores.php">Autores</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./Generos.php">Generos</a>
+                            <a class="nav-link active" aria-current="page" href="./exibirGeneros.php">Generos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./Editoras.php">Editoras</a>
+                            <a class="nav-link active" aria-current="page" href="./exibirEditoras.php">Editoras</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="./Gerenciar.php">Gerenciar</a>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Procurar" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Buscar</button>
-                    </form>
                 </div>
             </div>
         </nav>
@@ -55,36 +51,51 @@
         <br>
         <section class="container card">
             <div class="card-body">
-                <h5 class="card-title">Gêneros</h5>
+                <h5 class="card-title">Autores</h5>
                 <table class="table table-hover">
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">GÊNERO</th>
-                            <th scope="col">XXXXX</th>
-                            <th scope="col">XXXXX</th>
+                            <th scope="col">PRIMEIRO NOME</th>
+                            <th scope="col">ÚLTIMO NOME</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!--FAZER AQUI O WHILE BUSCANDO NO BD-->
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>TESTE</td>
-                            <td>TESTE</td>
-                            <td>@fat</td>
-                        </tr>
+                        <!--CONEXÃO COM O BANCO E WHILE BUSCANDO NO BD-->
+                        <?php
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "root";
+                        $dbname = "biblioteca_trabalho";
+
+                        // Create connection
+                        $conn = new mysqli($servername, $username, $password, $dbname);
+                        // Check connection
+                        if ($conn->connect_error) {
+                            die("Connection failed: " . $conn->connect_error);
+                        }
+
+                        $sql = "SELECT id, primeiro_nome, ultimo_nome FROM autor";
+                        $result = $conn->query($sql);
+
+                        if ($result->num_rows > 0) {
+                            // output data of each row
+                            while ($row = $result->fetch_assoc()) {
+                                echo "<tr>
+                                <th scope='row'>" . $row["id"] . "</th> 
+                                <td>" . $row["primeiro_nome"] . "</td>
+                                <td>". $row["ultimo_nome"] ."</td>
+                                </tr>";
+                            }
+                        } else {
+                            echo "<tr>
+                            <td>Nenhum registro encontrado</td>
+                            <td></td>
+                            <td></td>
+                            </tr>";
+                        }
+                        $conn->close();
+                        ?>
                     </tbody>
                 </table>
             </div>
