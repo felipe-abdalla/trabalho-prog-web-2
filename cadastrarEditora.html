@@ -54,45 +54,35 @@
     <section class="container">
       <h2>Cadastro de Editora</h2>
       <br>
-      <form class="row g-3">
+      <form class="row g-3" action="gerenciarEditora.php" method="POST">
         <div class="col-12">
           <label for="nomeEditora" class="form-label">Editora</label>
-          <input type="text" class="form-control" id="nomeEditora" placeholder="Digite o nome da editora" required>
+          <input type="text" class="form-control" id="nomeEditora" name="nomeEditora" placeholder="Digite o nome da editora" required>
         </div>
         <div class="col-12">
           <label for="cnpjEditora" class="form-label">CNPJ</label>
-          <input type="number" class="form-control" id="cnpjEditora" placeholder="Digite o CNPJ (apenas números)">
+          <input type="number" class="form-control" id="cnpjEditora" name="cnpjEditora" placeholder="Digite o CNPJ (apenas números)">
         </div>
         <div class="col-6">
           <label for="paisEditora" class="form-label">País</label>
-          <input type="text" class="form-control" id="paisEditora" placeholder="Digite o país da editora" required>
+          <input type="text" class="form-control" id="paisEditora" name="paisEditora" placeholder="Digite o país da editora" required>
         </div>
         <div class="col-6">
           <label for="cidadeEditora" class="form-label">Cidade</label>
-          <input type="text" class="form-control" id="cidadeEditora" placeholder="Digite a cidade da editora" required>
+          <input type="text" class="form-control" id="cidadeEditora" name="cidadeEditora" placeholder="Digite a cidade da editora" required>
         </div>
         <div class="col-12">
           <label for="ruaEditora" class="form-label">Rua</label>
-          <input type="text" class="form-control" id="ruaEditora" placeholder="Digite a rua da editora" required>
+          <input type="text" class="form-control" id="ruaEditora" name="ruaEditora" placeholder="Digite a rua da editora" required>
         </div>
         <div class="col-6">
           <label for="bairroEditora" class="form-label">Bairro</label>
-          <input type="text" class="form-control" id="bairroEditora" placeholder="Digite o bairro da editora" required>
+          <input type="text" class="form-control" id="bairroEditora" name="bairroEditora" placeholder="Digite o bairro da editora" required>
         </div>
         <div class="col-6">
           <label for="cepEditora" class="form-label">CEP</label>
-          <input type="number" class="form-control" id="cepEditora" placeholder="Digite o CEP da editora (apenas números)" required>
+          <input type="number" class="form-control" id="cepEditora" name="cepEditora" placeholder="Digite o CEP da editora (apenas números)" required>
         </div>
-
-        <!-- 
-          <div class="col-md-4">
-            <label for="inputState" class="form-label">State</label>
-            <select id="inputState" class="form-select">
-              <option selected>Choose...</option>
-              <option>...</option>
-            </select>
-          </div>
-        -->
         <div class="col-12">
           <button type="submit" class="btn btn-dark">Cadastrar</button>
           <a class="btn btn-dark" href="./Gerenciar.php">Voltar</a>

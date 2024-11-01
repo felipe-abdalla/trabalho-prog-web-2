@@ -4,8 +4,7 @@
   $password = "root";
   $dbname = "biblioteca_trabalho";
 
-  $primeiroNomeAutor = $_POST['primeiroNomeAutor'];
-  $ultimoNomeAutor = $_POST['ultimoNomeAutor'];
+  $nomeGenero = $_POST['nomeGenero'];
 
   // Create connection
   $conn = new mysqli($servername, $username, $password, $dbname);
@@ -14,11 +13,11 @@
     die("Falha na conexão: " . $conn->connect_error);
   }
 
-  $sql = "INSERT INTO autor (primeiro_nome, ultimo_nome)
-  VALUES ('" . $primeiroNomeAutor . "', '" . $ultimoNomeAutor . "')";
+  $sql = "INSERT INTO genero (genero)
+  VALUES ('" . $nomeGenero . "')";
 
   if ($conn->query($sql) === TRUE) {
-    header("Location: cadastrarAutor.html");
+    header("Location: cadastrarGenero.html");
   } else {
     echo "Erro ao efetuar cadastro: " . $sql . "<br>" . $conn->error;
     echo "<a class='btn btn-dark' href='./Gerenciar.php'>Voltar</a>";
