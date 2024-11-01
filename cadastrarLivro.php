@@ -68,7 +68,7 @@
         </div>
         <div class="col-6">
           <label for="anoPublicacaoLivro" class="form-label">Ano de Publicação</label>
-          <input type="number" class="form-control" id="anoPublicacaoLivro" name="anoPublicacaoLivro">
+          <input type="number" class="form-control" id="anoPublicacaoLivro" name="anoPublicacaoLivro" required>
         </div>
         <div class="col-6">
           <label for="numeroEdicaoLivro" class="form-label">Número da Edição</label>
@@ -98,16 +98,14 @@
 
         <div class="col-md-4">
           <label for="autorLivro" class="form-label">Autor</label>
-          <select id="autorLivro" class="form-select" name="autorLivroSelect">
-            <option selected>Escolha um autor...</option>
+          <select id="autorLivro" class="form-select" name="autorLivroSelect" required>
+            <option value="">Escolha um autor...</option>
             <?php
             // Loop para percorrer os resultados e exibir cada autor em um <option>
             if ($result->num_rows > 0) {
               while ($row = $result->fetch_assoc()) {
                 echo "<option value='" . $row['ID'] . "'>" . $row['primeiro_nome'] . "</option>";
               }
-            } else {
-              echo "<option value=''>Nenhum autor cadastrado</option>";
             }
             ?>
           </select>
@@ -141,16 +139,14 @@
 
         <div class="col-md-4">
           <label for="generoLivro" class="form-label">Gênero</label>
-          <select id="generoLivro" class="form-select" name="generoLivroSelect">
-            <option selected>Escolha um gênero...</option>
+          <select id="generoLivro" class="form-select" name="generoLivroSelect" required>
+            <option value="">Escolha um gênero...</option>
             <?php
             // Loop para percorrer os resultados e exibir cada autor em um <option>
             if ($result->num_rows > 0) {
               while ($row = $result->fetch_assoc()) {
                 echo "<option value='" . $row['ID'] . "'>" . $row['genero'] . "</option>";
               }
-            } else {
-              echo "<option value=''>Nenhum gênero cadastrado</option>";
             }
             ?>
           </select>
@@ -185,16 +181,14 @@
 
         <div class="col-md-4">
           <label for="editoraLivro" class="form-label">Editora</label>
-          <select id="editoraLivro" class="form-select" name="editoraLivroSelect">
-            <option selected>Escolha um gênero...</option>
+          <select id="editoraLivro" class="form-select" name="editoraLivroSelect" required>
+            <option value="">Escolha uma editora...</option>
             <?php
             // Loop para percorrer os resultados e exibir cada autor em um <option>
             if ($result->num_rows > 0) {
               while ($row = $result->fetch_assoc()) {
                 echo "<option value='" . $row['ID'] . "'>" . $row['editora'] . "</option>";
               }
-            } else {
-              echo "<option value=''>Nenhuma editora cadastrada</option>";
             }
             ?>
           </select>
