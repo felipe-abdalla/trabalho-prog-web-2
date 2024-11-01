@@ -155,123 +155,61 @@
 
 
     <section class="container marketing">
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <!-- Primeiro card -->
-        <div class="col-lg-4">
-          <!-- Imagem -->
-          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
-            role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <title>TITULO DE LIVRO</title>
-            <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-          </svg>
-          <!-- Titulo -->
-          <h2 class="fw-normal">TITULO DE LIVRO</h2>
-          <!-- Descrição -->
-          <p>AUTOR GENERO E EDITORA</p>
-          <!-- Botão -->
-          <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-        </div>
-        <!-- Segundo card -->
-        <div class="col-lg-4">
-          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
-            role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <title>TITULO DE LIVRO</title>
-            <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-          </svg>
-          <h2 class="fw-normal">TITULO DE LIVRO</h2>
-          <p>AUTOR GENERO E EDITORA</p>
-          <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-        </div>
-        <!-- Terceiro card -->
-        <div class="col-lg-4">
-          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
-            role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <title>TITULO DE LIVRO</title>
-            <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-          </svg>
-          <h2 class="fw-normal">TITULO DE LIVRO</h2>
-          <p>AUTOR GENERO E EDITORA</p>
-          <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-        </div>
-      </div>
-
-
+      
       <h2 class="text-center bg-white text-dark">Livros disponíveis</h2>
 
       <div class="container row mx-auto g-4">
 
-        <div class="col-12 col-md-6 col-xxl-4">
-          <div class="card">
-            <img class="img-fluid" src="img/camisa.jpg" alt="">
-            <div class="card-body">
-              <h5 class="card-title">TITULO DE LIVRO</h5>
-              <p class="card-text">AUTOR GENERO E EDITORA</p>
-              <p>R$30,00</p>
-              <a href="#" class="btn btn-primary">Ver mais</a>
-            </div>
-          </div>
-        </div>
+        <!--CONEXÃO COM O BANCO-->
+        <?php
+            $servername = "localhost";
+            $username = "root";
+            $password = "root";
+            $dbname = "biblioteca_trabalho";
 
-        <div class="col-12 col-md-6 col-xxl-4">
-          <div class="card">
-            <img class="img-fluid" src="img/calça.jpg" alt="">
-            <div class="card-body">
-              <h5 class="card-title">TITULO DE LIVRO</h5>
-              <p class="card-text">AUTOR GENERO E EDITORA</p>
-              <p>R$30,00</p>
-              <a href="#" class="btn btn-primary">Ver mais</a>
-            </div>
-          </div>
-        </div>
+            // Create connection
+            $conn = new mysqli($servername, $username, $password, $dbname);
+            // Check connection
+            if ($conn->connect_error) {
+              die("Connection failed: " . $conn->connect_error);
+            }
 
-        <div class="col-12 col-md-6 col-xxl-4">
-          <div class="card">
-            <img class="img-fluid" src="img/tenis.jpg" alt="">
-            <div class="card-body">
-              <h5 class="card-title">TITULO DE LIVRO</h5>
-              <p class="card-text">AUTOR GENERO E EDITORA</p>
-              <p>R$30,00</p>
-              <a href="#" class="btn btn-primary">Ver mais</a>
-            </div>
-          </div>
-        </div>
+            $sql = "SELECT l.id, livro, isbn, qtd, ano_publicacao, nro_edicao, a.primeiro_nome as autor, g.genero as genero, e.editora as editora
+            FROM livro l
+            JOIN autor a ON l.autor_ID = a.ID
+            JOIN genero g ON l.genero_ID = g.ID
+            JOIN editora e ON l.editora_ID = e.ID";
+            $result = $conn->query($sql);
 
-        <div class="col-12 col-md-6 col-xxl-4">
-          <div class="card">
-            <img class="img-fluid" src="img/jaqueta.jpg" alt="">
-            <div class="card-body">
-              <h5 class="card-title">TITULO DE LIVRO</h5>
-              <p class="card-text">AUTOR GENERO E EDITORA</p>
-              <p>R$30,00</p>
-              <a href="#" class="btn btn-primary">Ver mais</a>
-            </div>
-          </div>
-        </div>
+            if ($result->num_rows > 0) {
+              // output data of each row
+              while ($row = $result->fetch_assoc()) {
+                echo "
+                    <div class='col-12 col-md-6 col-xxl-4'>
+                      <div class='card'>
+                        <div class='card-body'>
+                          <h5 class='card-title'>" . $row["livro"] . "</h5>
+                          <p class='card-text'>Autor: " . $row["autor"] . "</p>
+                          <p class='card-text'>Gênero: " . $row["genero"] . "</p>
+                          <p class='card-text'>Editora: " . $row["editora"] . "</p>
+                          <p class='card-text'>Edição: " . $row["nro_edicao"] . "</p>
+                          <p class='card-text'>Ano de Publicação: " . $row["ano_publicacao"] . "</p>
+                          <p class='card-text'>ISBN: " . $row["isbn"] . "</p>
+                          <p>Quantidade: " . $row["qtd"] . "</p>
+                        </div>
+                      </div>
+                    </div>";
+              }
+            } else {
+              echo "Nenhum registro encontrado</td>";
+            }
+            $conn->close();
+        
+        ?>
 
-        <div class="col-12 col-md-6 col-xxl-4">
-          <div class="card">
-            <img class="img-fluid" src="img/oculos.png" alt="">
-            <div class="card-body">
-              <h5 class="card-title">TITULO DE LIVRO</h5>
-              <p class="card-text">AUTOR GENERO E EDITORA</p>
-              <p>R$30,00</p>
-              <a href="#" class="btn btn-primary">Ver mais</a>
-            </div>
-          </div>
-        </div>
 
-        <div class="col-12 col-md-6 col-xxl-4">
-          <div class="card">
-            <img class="img-fluid" src="img/bolsa.jpg" alt="">
-            <div class="card-body">
-              <h5 class="card-title">TITULO DE LIVRO</h5>
-              <p class="card-text">AUTOR GENERO E EDITORA</p>
-              <p>R$30,00</p>
-              <a href="#" class="btn btn-primary">Ver mais</a>
-            </div>
-          </div>
-        </div>
+
+        
       </div>
     </section>
 
