@@ -80,7 +80,22 @@
   </header>
 
 
+
+
   <main>
+    <?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "root";
+    $dbname = "biblioteca_trabalho";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }
+    ?>
 
     <!-- Carousel -->
     <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
@@ -157,20 +172,9 @@
     <section class="container marketing">
       <div class="container row mx-auto g-4">
 
+
+
         <?php
-        $servername = "localhost";
-        $username = "root";
-        $password = "root";
-        $dbname = "biblioteca_trabalho";
-
-        // Create connection
-        $conn = new mysqli($servername, $username, $password, $dbname);
-        // Check connection
-        if ($conn->connect_error) {
-          die("Connection failed: " . $conn->connect_error);
-        }
-
-
         $sql = "SELECT l.livro, a.primeiro_nome AS autor, g.genero, e.editora 
         FROM livro l 
         JOIN autor a ON a.ID = l.autor_ID

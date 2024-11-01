@@ -45,6 +45,22 @@
   </header>
 
   <main>
+
+    <?php
+    // Configuração da conexão com o banco de dados
+    $servername = "localhost";
+    $username = "root";
+    $password = "root";
+    $dbname = "biblioteca_trabalho";
+
+    // Criando a conexão
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Verificando a conexão
+    if ($conn->connect_error) {
+      die("Conexão falhou: " . $conn->connect_error);
+    }
+    ?>
     <br><br><br><br><br>
 
     <section class="container">
@@ -77,20 +93,6 @@
         </div>
 
         <?php
-        // Configuração da conexão com o banco de dados
-        $servername = "localhost";
-        $username = "root";
-        $password = "root";
-        $dbname = "biblioteca_trabalho";
-
-        // Criando a conexão
-        $conn = new mysqli($servername, $username, $password, $dbname);
-
-        // Verificando a conexão
-        if ($conn->connect_error) {
-          die("Conexão falhou: " . $conn->connect_error);
-        }
-
         // Consulta SQL para buscar todos os autores
         $sql = "SELECT ID, primeiro_nome FROM autor";
         $result = $conn->query($sql);
@@ -111,27 +113,9 @@
           </select>
         </div>
 
-        <?php
-        // Fechando a conexão com o banco de dados
-        $conn->close();
-        ?>
-        
+
 
         <?php
-        // Configuração da conexão com o banco de dados
-        $servername = "localhost";
-        $username = "root";
-        $password = "root";
-        $dbname = "biblioteca_trabalho";
-
-        // Criando a conexão
-        $conn = new mysqli($servername, $username, $password, $dbname);
-
-        // Verificando a conexão
-        if ($conn->connect_error) {
-          die("Conexão falhou: " . $conn->connect_error);
-        }
-
         // Consulta SQL para buscar todos os autores
         $sql = "SELECT ID, genero FROM genero";
         $result = $conn->query($sql);
@@ -152,27 +136,9 @@
           </select>
         </div>
 
+
+
         <?php
-        // Fechando a conexão com o banco de dados
-        $conn->close();
-        ?>
-
-        
-
-<?php
-        // Configuração da conexão com o banco de dados
-        $servername = "localhost";
-        $username = "root";
-        $password = "root";
-        $dbname = "biblioteca_trabalho";
-
-        // Criando a conexão
-        $conn = new mysqli($servername, $username, $password, $dbname);
-
-        // Verificando a conexão
-        if ($conn->connect_error) {
-          die("Conexão falhou: " . $conn->connect_error);
-        }
 
         // Consulta SQL para buscar todos os autores
         $sql = "SELECT ID, editora FROM editora";
