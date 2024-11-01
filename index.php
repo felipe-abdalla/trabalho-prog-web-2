@@ -175,7 +175,7 @@
 
 
         <?php
-        $sql = "SELECT l.livro, a.primeiro_nome AS autor, g.genero, e.editora 
+        $sql = "SELECT l.livro, a.primeiro_nome AS autor, g.genero, e.editora, l.qtd , l.ano_publicacao
         FROM livro l 
         JOIN autor a ON a.ID = l.autor_ID
         JOIN genero g ON g.ID = l.genero_ID 
@@ -196,7 +196,13 @@
                     <img class='img-fluid' src='img/camisa.jpg' alt='Imagem do livro'>
                     <div class='card-body'>
                         <h5 class='card-title'>" . htmlspecialchars($row['livro']) . "</h5>
-                        <p class='card-text'>Autor: " . htmlspecialchars($row['autor']) . "<br>Gênero: " . htmlspecialchars($row['genero']) . "<br>Editora: " . htmlspecialchars($row['editora']) . "</p>
+                        <p class='card-text'>Autor: " . htmlspecialchars($row['autor']) 
+                        . "<br>Gênero: " . htmlspecialchars($row['genero']) 
+                        . "<br>Editora: " . htmlspecialchars($row['editora']) 
+                        . "<br>Exemplares: " . htmlspecialchars($row['qtd'])
+                        . "<br>Ano de Publicação: " . htmlspecialchars($row['ano_publicacao'])
+
+                        ."</p>
                         <a href='#' class='btn btn-primary'>Ver mais</a>
                     </div>
                 </div>
