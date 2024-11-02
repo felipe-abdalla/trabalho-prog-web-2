@@ -49,38 +49,53 @@
 
   <!-- Header com navbar -->
   <header data-bs-theme="dark">
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Inventário</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./index.php">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./exibirAutores.php">Autores</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./exibirGeneros.php">Generos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./exibirEditoras.php">Editoras</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./Gerenciar.php">Gerenciar</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Inventário</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./index.php">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./exibirAutores.php">Autores</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./exibirGeneros.php">Generos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./exibirEditoras.php">Editoras</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./Gerenciar.php">Gerenciar</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
 
 
   <main>
+    <?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "root";
+    $dbname = "biblioteca_trabalho";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }
+    ?>
 
     <!-- Carousel -->
     <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
@@ -155,75 +170,64 @@
 
 
     <section class="container marketing">
-      
-      <h2 class="text-center bg-white text-dark">Livros disponíveis</h2>
-
       <div class="container row mx-auto g-4">
 
-        <!--CONEXÃO COM O BANCO-->
+
+
         <?php
-            $servername = "localhost";
-            $username = "root";
-            $password = "root";
-            $dbname = "biblioteca_trabalho";
-
-            // Create connection
-            $conn = new mysqli($servername, $username, $password, $dbname);
-            // Check connection
-            if ($conn->connect_error) {
-              die("Connection failed: " . $conn->connect_error);
-            }
-
-            $sql = "SELECT l.id, livro, isbn, qtd, ano_publicacao, nro_edicao, a.primeiro_nome as autor, g.genero as genero, e.editora as editora
-            FROM livro l
-            JOIN autor a ON l.autor_ID = a.ID
-            JOIN genero g ON l.genero_ID = g.ID
-            JOIN editora e ON l.editora_ID = e.ID";
-            $result = $conn->query($sql);
-
-            if ($result->num_rows > 0) {
-              // output data of each row
-              while ($row = $result->fetch_assoc()) {
-                echo "
-                    <div class='col-12 col-md-6 col-xxl-4'>
-                      <div class='card'>
-                        <div class='card-body'>
-                          <h5 class='card-title'>" . $row["livro"] . "</h5>
-                          <p class='card-text'>Autor: " . $row["autor"] . "</p>
-                          <p class='card-text'>Gênero: " . $row["genero"] . "</p>
-                          <p class='card-text'>Editora: " . $row["editora"] . "</p>
-                          <p class='card-text'>Edição: " . $row["nro_edicao"] . "</p>
-                          <p class='card-text'>Ano de Publicação: " . $row["ano_publicacao"] . "</p>
-                          <p class='card-text'>ISBN: " . $row["isbn"] . "</p>
-                          <p>Quantidade: " . $row["qtd"] . "</p>
-                        </div>
-                      </div>
-                    </div>";
-              }
-            } else {
-              echo "Nenhum registro encontrado</td>";
-            }
-            $conn->close();
-        
+        $sql = "SELECT l.livro, a.primeiro_nome AS autor, g.genero, e.editora, l.qtd , l.ano_publicacao
+        FROM livro l 
+        JOIN autor a ON a.ID = l.autor_ID
+        JOIN genero g ON g.ID = l.genero_ID 
+        JOIN editora e ON e.ID = l.editora_ID";
+        $result = $conn->query($sql);
         ?>
 
 
+        <h2 class="text-center bg-white text-dark">Livros disponíveis</h2>
 
-        
+        <div class="container row mx-auto g-4">
+          <?php
+          if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+              echo "
+            <div class='col-12 col-md-6 col-xxl-4'>
+                <div class='card'>
+                    <img class='img-fluid' src='img/camisa.jpg' alt='Imagem do livro'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>" . htmlspecialchars($row['livro']) . "</h5>
+                        <p class='card-text'>Autor: " . htmlspecialchars($row['autor']) 
+                        . "<br>Gênero: " . htmlspecialchars($row['genero']) 
+                        . "<br>Editora: " . htmlspecialchars($row['editora']) 
+                        . "<br>Exemplares: " . htmlspecialchars($row['qtd'])
+                        . "<br>Ano de Publicação: " . htmlspecialchars($row['ano_publicacao'])
+
+                        ."</p>
+                        <a href='#' class='btn btn-primary'>Ver mais</a>
+                    </div>
+                </div>
+            </div>";
+            }
+          } else {
+            echo "<p>Nenhum registro encontrado.</p>";
+          }
+          $conn->close();
+          ?>
+        </div>
       </div>
     </section>
 
-    
+
   </main>
-  
+
   <footer class="text-center">
     <section class="bg-dark text-light ">
-  
+
       <h2 class="text-center mt-4 mb-4">Conheça a nossa plataforma</h2>
-  
+
       <div class="d-flex flex-column align-items-center mt-4 pb-4">
-  
-  
+
+
         <div class="container row mx-auto g-4">
           <div class="col-12 col-md-12 col-xxl-4">
             <div class="divs-facilidades mx-auto d-flex mb-3">
@@ -235,18 +239,18 @@
               </div>
             </div>
           </div>
-  
+
           <div class="col-12 col-md-12 col-xxl-4">
             <div class="divs-facilidades mx-auto d-flex mb-3">
               <div> <i class="bi bi-arrow-repeat icons m-3 text-warning"></i></div>
               <div>
                 <div class=" mb-1 text-warning text-warning">AUTORES, GÊNEROS E EDITORAS</div>
-                <div class="texto-menor ">Exibimos diversos autores e gêneros diversos. Além da divulgação de editoras. 
+                <div class="texto-menor ">Exibimos diversos autores e gêneros diversos. Além da divulgação de editoras.
                 </div>
               </div>
             </div>
           </div>
-  
+
           <div class="col-12 col-md-12 col-xxl-4">
             <div class="divs-facilidades mx-auto d-flex mb-3">
               <div><i class="bi bi-flower1 icons m-3 text-warning"></i></div>
@@ -266,9 +270,9 @@
       fictício sem fins comerciais.
     </section>
   </footer>
-  
+
   <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-</body> 
+</body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
