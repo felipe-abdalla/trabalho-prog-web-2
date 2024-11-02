@@ -200,7 +200,6 @@
                         . "<br>Exemplares: " . htmlspecialchars($row['qtd'])
                         . "<br>Ano de Publicação: " . htmlspecialchars($row['ano_publicacao'])
                         ."</p>
-                        <a href='#' class='btn btn-dark'>Ver mais</a>
                       </div>
                     </div>
                   </div>";

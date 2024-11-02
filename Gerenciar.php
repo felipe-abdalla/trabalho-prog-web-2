@@ -73,6 +73,7 @@
               <th scope="col">AUTOR</th>
               <th scope="col">GÊNERO</th>
               <th scope="col">EDITORA</th>
+              <th scope="col">AÇÕES</th>
             </tr>
           </thead>
           <tbody>
@@ -87,7 +88,7 @@
             $conn = new mysqli($servername, $username, $password, $dbname);
             // Check connection
             if ($conn->connect_error) {
-              die("Connection failed: " . $conn->connect_error);
+              die("Falha na conexão: " . $conn->connect_error);
             }
 
             $sql = "SELECT l.id, livro, isbn, qtd, ano_publicacao, nro_edicao, a.primeiro_nome as autor, g.genero as genero, e.editora as editora
@@ -110,6 +111,12 @@
                       <td>" . $row["autor"] . "</td>
                       <td>" . $row["genero"] . "</td>
                       <td>" . $row["editora"] . "</td>
+                      <td>
+                      <!-- Botão de exclusão -->
+                      <a href='#' class='btn btn-dark'>Alterar</a>
+                      <a class='btn btn-dark' href='excluir.php?id=" . $row["id"] . "&tabela=livro' 
+                      onclick='return confirm('Confirma a exclusão?');'>Excluir</a>
+                      </td>
                       </tr>";
               }
             } else {
@@ -117,9 +124,15 @@
                     <td>Nenhum registro encontrado</td>
                     <td></td>
                     <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                     </tr>";
             }
-            $conn->close();
             ?>
           </tbody>
         </table>
@@ -137,23 +150,13 @@
               <th scope="col">ID</th>
               <th scope="col">PRIMEIRO NOME</th>
               <th scope="col">ÚLTIMO NOME</th>
+              <th scope="col">AÇÕES</th>
             </tr>
           </thead>
           <tbody>
             <!--CONEXÃO COM O BANCO E WHILE BUSCANDO NO BD-->
             <?php
-            $servername = "localhost";
-            $username = "root";
-            $password = "root";
-            $dbname = "biblioteca_trabalho";
-
-            // Create connection
-            $conn = new mysqli($servername, $username, $password, $dbname);
-            // Check connection
-            if ($conn->connect_error) {
-              die("Connection failed: " . $conn->connect_error);
-            }
-
+            
             $sql = "SELECT id, primeiro_nome, ultimo_nome FROM autor";
             $result = $conn->query($sql);
 
@@ -164,6 +167,12 @@
                       <th scope='row'>" . $row["id"] . "</th> 
                       <td>" . $row["primeiro_nome"] . "</td>
                       <td>" . $row["ultimo_nome"] . "</td>
+                      <td>
+                      <!-- Botão de exclusão -->
+                      <a href='#' class='btn btn-dark'>Alterar</a>
+                      <a class='btn btn-dark' href='excluir.php?id=" . $row["id"] . "&tabela=autor' 
+                      onclick='return confirm('Confirma a exclusão?');'>Excluir</a>
+                      </td>
                       </tr>";
               }
             } else {
@@ -171,9 +180,10 @@
                     <td>Nenhum registro encontrado</td>
                     <td></td>
                     <td></td>
+                    <td></td>
                     </tr>";
             }
-            $conn->close();
+            
             ?>
           </tbody>
         </table>
@@ -190,23 +200,13 @@
             <tr>
               <th scope="col">ID</th>
               <th scope="col">GÊNERO</th>
+              <th scope="col">AÇÕES</th>
             </tr>
           </thead>
           <tbody>
             <!--CONEXÃO COM O BANCO E WHILE BUSCANDO NO BD-->
             <?php
-            $servername = "localhost";
-            $username = "root";
-            $password = "root";
-            $dbname = "biblioteca_trabalho";
-
-            // Create connection
-            $conn = new mysqli($servername, $username, $password, $dbname);
-            // Check connection
-            if ($conn->connect_error) {
-              die("Connection failed: " . $conn->connect_error);
-            }
-
+            
             $sql = "SELECT id, genero FROM genero";
             $result = $conn->query($sql);
 
@@ -216,15 +216,22 @@
                 echo "<tr>
                       <th scope='row'>" . $row["id"] . "</th> 
                       <td>" . $row["genero"] . "</td>
+                      <td>
+                      <!-- Botão de exclusão -->
+                      <a href='#' class='btn btn-dark'>Alterar</a>
+                      <a class='btn btn-dark' href='excluir.php?id=" . $row["id"] . "&tabela=genero' 
+                      onclick='return confirm('Confirma a exclusão?');'>Excluir</a>
+                      </td>
                       </tr>";
               }
             } else {
               echo "<tr>
                     <td>Nenhum registro encontrado</td>
                     <td></td>
+                    <td></td>
                     </tr>";
             }
-            $conn->close();
+            
             ?>
           </tbody>
         </table>
@@ -243,23 +250,13 @@
               <th scope="col">EDITORA</th>
               <th scope="col">CNPJ</th>
               <th scope="col">ENDEREÇO</th>
+              <th scope="col">AÇÕES</th>
             </tr>
           </thead>
           <tbody>
             <!--CONEXÃO COM O BANCO E WHILE BUSCANDO NO BD-->
             <?php
-            $servername = "localhost";
-            $username = "root";
-            $password = "root";
-            $dbname = "biblioteca_trabalho";
-
-            // Create connection
-            $conn = new mysqli($servername, $username, $password, $dbname);
-            // Check connection
-            if ($conn->connect_error) {
-              die("Connection failed: " . $conn->connect_error);
-            }
-
+            
             $sql = "select id, editora, cnpj, concat(rua,', ', cidade,', ', bairro,', ', cep,', ', pais) as endereco from biblioteca_trabalho.editora;";
             $result = $conn->query($sql);
 
@@ -271,11 +268,18 @@
                       <td>" . $row["editora"] . "</td>
                       <td>" . $row["cnpj"] . "</td>
                       <td>" . $row["endereco"] . "</td>
+                      <td>
+                      <!-- Botão de exclusão -->
+                      <a href='#' class='btn btn-dark'>Alterar</a>
+                      <a class='btn btn-dark' href='excluir.php?id=" . $row["id"] . "&tabela=editora' 
+                      onclick='return confirm('Tem certeza que deseja excluir este produto?');'>Excluir</a>
+                      </td>
                       </tr>";
               }
             } else {
               echo "<tr>
                     <td>Nenhum registro encontrado</td>
+                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -287,7 +291,6 @@
         </table>
       </div>
     </section>
-
 
   </main>
 
