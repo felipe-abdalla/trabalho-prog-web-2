@@ -115,9 +115,11 @@
           </svg>
           <div class="container">
             <div class="carousel-caption text-start">
-              <h1>NOME DE AUTOR</h1>
-              <p class="opacity-75">DADOS OU LIVROS DO AUTOR</p>
-              <p><a class="btn btn-lg btn-primary" href="#">Ver outros autores</a></p>
+              <h1>Autores renomados</h1>
+              <p class="opacity-75">
+                Conheça nossos autores cadastrados
+              </p>
+              <p><a class="btn btn-lg btn-dark" href="exibirAutores.php">Ver autores</a></p>
             </div>
           </div>
         </div>
@@ -129,9 +131,9 @@
           </svg>
           <div class="container">
             <div class="carousel-caption">
-              <h1>GENERO</h1>
-              <p>DADOS OU LIVROS DESSE GENERO </p>
-              <p><a class="btn btn-lg btn-primary" href="#">Ver outros generos</a></p>
+              <h1>Gêneros diversos</h1>
+              <p>Possuímos gêneros variados cadastrados na plataforma</p>
+              <p><a class="btn btn-lg btn-dark" href="exibirGeneros.php">Ver gêneros</a></p>
             </div>
           </div>
         </div>
@@ -143,9 +145,9 @@
           </svg>
           <div class="container">
             <div class="carousel-caption text-end">
-              <h1>NOME DE EDITORA</h1>
-              <p>DADOS OU LIVROS DA EDITORA</p>
-              <p><a class="btn btn-lg btn-primary" href="#">Ver outras editoras</a></p>
+              <h1>Editoras criativas</h1>
+              <p>As editoras cadastradas em nossa plataforma possuem alta distinção</p>
+              <p><a class="btn btn-lg btn-dark" href="exibirEditoras.php">Ver editoras</a></p>
             </div>
           </div>
         </div>
@@ -172,8 +174,6 @@
     <section class="container marketing">
       <div class="container row mx-auto g-4">
 
-
-
         <?php
         $sql = "SELECT l.livro, a.primeiro_nome AS autor, g.genero, e.editora, l.qtd , l.ano_publicacao
         FROM livro l 
@@ -183,7 +183,6 @@
         $result = $conn->query($sql);
         ?>
 
-
         <h2 class="text-center bg-white text-dark">Livros disponíveis</h2>
 
         <div class="container row mx-auto g-4">
@@ -191,22 +190,20 @@
           if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
               echo "
-            <div class='col-12 col-md-6 col-xxl-4'>
-                <div class='card'>
-                    <img class='img-fluid' src='img/camisa.jpg' alt='Imagem do livro'>
-                    <div class='card-body'>
+                  <div class='col-12 col-md-6 col-xxl-4'>
+                    <div class='card'>
+                      <div class='card-body'>
                         <h5 class='card-title'>" . htmlspecialchars($row['livro']) . "</h5>
                         <p class='card-text'>Autor: " . htmlspecialchars($row['autor']) 
                         . "<br>Gênero: " . htmlspecialchars($row['genero']) 
                         . "<br>Editora: " . htmlspecialchars($row['editora']) 
                         . "<br>Exemplares: " . htmlspecialchars($row['qtd'])
                         . "<br>Ano de Publicação: " . htmlspecialchars($row['ano_publicacao'])
-
                         ."</p>
-                        <a href='#' class='btn btn-primary'>Ver mais</a>
+                        <a href='#' class='btn btn-dark'>Ver mais</a>
+                      </div>
                     </div>
-                </div>
-            </div>";
+                  </div>";
             }
           } else {
             echo "<p>Nenhum registro encontrado.</p>";
@@ -222,11 +219,8 @@
 
   <footer class="text-center">
     <section class="bg-dark text-light ">
-
       <h2 class="text-center mt-4 mb-4">Conheça a nossa plataforma</h2>
-
       <div class="d-flex flex-column align-items-center mt-4 pb-4">
-
 
         <div class="container row mx-auto g-4">
           <div class="col-12 col-md-12 col-xxl-4">
@@ -266,7 +260,7 @@
     </section>
 
     <section class="py-3 my-0 bg-dark text-light">
-      2024 <i class="bi bi-c-circle"></i> Desenvolvido por TADS | Projeto
+      2024 <i class="bi bi-c-circle"></i> Desenvolvido por alunos do TADS | Projeto
       fictício sem fins comerciais.
     </section>
   </footer>
