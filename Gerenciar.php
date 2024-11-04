@@ -10,6 +10,13 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
   integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
+  <script>
+    //Essa funçãom é para excluir
+    function confirmarExclusao (){
+      return confirm("Você tem certeza que quer exluir")
+    }
+  </script>
+
 
 <body>
 
@@ -115,7 +122,8 @@
                       <!-- Botão de exclusão -->
                       <a href='#' class='btn btn-dark'>Alterar</a>
                       <a class='btn btn-dark' href='excluir.php?id=" . $row["id"] . "&tabela=livro' 
-                      onclick='return confirm('Confirma a exclusão?');'>Excluir</a>
+                      onclick='return confirmarExclusao();'>Excluir</a>
+                                  </td>
                       </td>
                       </tr>";
               }
@@ -171,7 +179,7 @@
                       <!-- Botão de exclusão -->
                       <a href='#' class='btn btn-dark'>Alterar</a>
                       <a class='btn btn-dark' href='excluir.php?id=" . $row["id"] . "&tabela=autor' 
-                      onclick='return confirm('Confirma a exclusão?');'>Excluir</a>
+                      onclick='return confirmarExclusao();'>Excluir</a>
                       </td>
                       </tr>";
               }
@@ -220,7 +228,7 @@
                       <!-- Botão de exclusão -->
                       <a href='#' class='btn btn-dark'>Alterar</a>
                       <a class='btn btn-dark' href='excluir.php?id=" . $row["id"] . "&tabela=genero' 
-                      onclick='return confirm('Confirma a exclusão?');'>Excluir</a>
+                      onclick='return confirmarExclusao();'>Excluir</a>
                       </td>
                       </tr>";
               }
@@ -272,7 +280,7 @@
                       <!-- Botão de exclusão -->
                       <a href='#' class='btn btn-dark'>Alterar</a>
                       <a class='btn btn-dark' href='excluir.php?id=" . $row["id"] . "&tabela=editora' 
-                      onclick='return confirm('Tem certeza que deseja excluir este produto?');'>Excluir</a>
+                      onclick='return confirmarExclusao();'>Excluir</a>
                       </td>
                       </tr>";
               }
