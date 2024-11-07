@@ -24,7 +24,8 @@
   '" . $cepEditora . "', '" . $paisEditora . "', '" . $cnpjEditora . "')";
 
   if ($conn->query($sql) === TRUE) {
-    header("Location: cadastrarEditora.html");
+    $last_id = $conn->insert_id;
+    header("Location: cadastrarEditora.php?last_id=$last_id");
   } else {
     echo "Erro ao efetuar cadastro: " . $sql . "<br>" . $conn->error;
     echo "<a class='btn btn-dark' href='./Gerenciar.php'>Voltar</a>";

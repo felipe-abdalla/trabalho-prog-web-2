@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastrar Autor</title>
+  <title>Cadastrar Genero</title>
 </head>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -48,26 +48,52 @@
     <br><br><br><br><br>
     
     <section class="container">
-      <h2>Cadastro de Autor</h2>
+      <h2>Cadastro de Gênero</h2>
       <br>
-      <form class="row g-3" action="gerenciarAutor.php" method="POST">
+      <form class="row g-3" action="gerenciarGenero.php" method="POST">
         <div class="col-12">
-          <label for="primeiroNomeAutor" class="form-label">Nome</label>
-          <input type="text" class="form-control" id="primeiroNomeAutor" name="primeiroNomeAutor" placeholder="Digite o primeiro nome do autor" required>
-        </div>
-        <div class="col-12">
-          <label for="ultimoNomeAutor" class="form-label">Último nome</label>
-          <input type="text" class="form-control" id="ultimoNomeAutor" name="ultimoNomeAutor" placeholder="Digite o último nome do autor">
+          <label for="nomeGenero" class="form-label">Gênero</label>
+          <input type="text" class="form-control" id="nomeGenero" name="nomeGenero" placeholder="Digite o gênero" required>
         </div>
         <div class="col-12">
           <button type="submit" class="btn btn-dark">Cadastrar</button>
           <a class="btn btn-dark" href="./Gerenciar.php">Voltar</a>
+          <div id="liveAlertPlaceholder"><br></div>
         </div>
       </form>
     </section>
 
+    <!--SCRIPT para exibir alerta de confirmação de cadastro-->
+    <script>
+      const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+      const appendAlert = (message, type) => {
+        const wrapper = document.createElement('div')
+        wrapper.innerHTML = [
+          `<div class="alert alert-${type} alert-dismissible fade show" role="alert">`,
+          `   <div>${message}</div>`,
+          '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+          '</div>'
+        ].join('')
+        alertPlaceholder.append(wrapper)
+      }
+
+      const alertTrigger = document.getElementById('last_id')
+      <?php
+        $last_id = $_GET['last_id'];
+        echo "
+        if (". $last_id ." != 0) {
+          appendAlert('Cadastro efetuado com sucesso!', 'success')
+        }";
+
+      ?>
+    </script>
+
   </main>
 
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 
 </html>

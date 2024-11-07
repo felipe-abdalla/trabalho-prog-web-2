@@ -136,8 +136,6 @@
           </select>
         </div>
 
-
-
         <?php
 
         // Consulta SQL para buscar todos os autores
@@ -169,12 +167,50 @@
         <div class="col-12">
           <button type="submit" class="btn btn-dark">Cadastrar</button>
           <a class="btn btn-dark" href="./Gerenciar.php">Voltar</a>
+          <div id="liveAlertPlaceholder"><br></div>
         </div>
       </form>
+      
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <div>
+        Nota:
+        Para cadastrar um livro, é necessário que seja informado pelo menos um autor, gênero e editora.</div>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
     </section>
+
+
+    <!--SCRIPT para exibir alerta de confirmação de cadastro-->
+    <script>
+      const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+      const appendAlert = (message, type) => {
+        const wrapper = document.createElement('div')
+        wrapper.innerHTML = [
+          `<div class="alert alert-${type} alert-dismissible fade show" role="alert">`,
+          `   <div>${message}</div>`,
+          '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+          '</div>'
+        ].join('')
+        alertPlaceholder.append(wrapper)
+      }
+
+      const alertTrigger = document.getElementById('last_id')
+      <?php
+      $last_id = $_GET['last_id'];
+      echo "
+        if (" . $last_id . " != 0) {
+          appendAlert('Cadastro efetuado com sucesso!', 'success')
+        }";
+
+      ?>
+    </script>
 
   </main>
 
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </html>

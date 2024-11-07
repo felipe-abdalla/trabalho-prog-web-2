@@ -10,14 +10,6 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
   integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-  <script>
-    //Essa funçãom é para excluir
-    function confirmarExclusao (){
-      return confirm("Você tem certeza que quer exluir")
-    }
-  </script>
-
-
 <body>
 
   <header data-bs-theme="dark">
@@ -57,9 +49,9 @@
     <section class="container text-center">
       <div class="center-align btn-group">
         <a href="cadastrarLivro.php" class="btn btn-outline-dark">Cadastrar Livro</a>
-        <a href="cadastrarAutor.html" class="btn btn-outline-dark">Cadastrar Autor</a>
-        <a href="cadastrarGenero.html" class="btn btn-outline-dark">Cadastrar Genero</a>
-        <a href="cadastrarEditora.html" class="btn btn-outline-dark">Cadastrar Editora</a>
+        <a href="cadastrarAutor.php" class="btn btn-outline-dark">Cadastrar Autor</a>
+        <a href="cadastrarGenero.php" class="btn btn-outline-dark">Cadastrar Genero</a>
+        <a href="cadastrarEditora.php" class="btn btn-outline-dark">Cadastrar Editora</a>
       </div>
     </section>
 
@@ -119,11 +111,29 @@
                       <td>" . $row["genero"] . "</td>
                       <td>" . $row["editora"] . "</td>
                       <td>
-                      <!-- Botão de exclusão -->
                       <a href='#' class='btn btn-dark'>Alterar</a>
-                      <a class='btn btn-dark' href='excluir.php?id=" . $row["id"] . "&tabela=livro' 
-                      onclick='return confirmarExclusao();'>Excluir</a>
-                                  </td>
+                      
+                      <!-- Botão de exclusão -->
+                      <a class='btn btn-dark' data-bs-toggle='modal' data-bs-target='#exampleModal'>Excluir</a>
+                      <!-- Modal de confirmação para exclusão -->
+                          <div class='modal fade' id='exampleModal' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+                            <div class='modal-dialog'>
+                              <div class='modal-content'>
+                                <div class='modal-header'>
+                                  <h1 class='modal-title fs-5' id='exampleModalLabel'>Confirmar exclusão</h1>
+                                  <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+                                </div>
+                                <div class='modal-body'>
+                                  Você confirma a exclusão do registro?
+                                </div>
+                                <div class='modal-footer'>
+                                  <a type='button' class='btn btn-dark' data-bs-dismiss='modal'>Cancelar</a>
+                                  <a type='button' class='btn btn-danger' href='excluir.php?id=" . $row["id"] . "&tabela=livro'>Confirmar</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      
                       </td>
                       </tr>";
               }
@@ -164,7 +174,7 @@
           <tbody>
             <!--CONEXÃO COM O BANCO E WHILE BUSCANDO NO BD-->
             <?php
-            
+
             $sql = "SELECT id, primeiro_nome, ultimo_nome FROM autor";
             $result = $conn->query($sql);
 
@@ -176,10 +186,29 @@
                       <td>" . $row["primeiro_nome"] . "</td>
                       <td>" . $row["ultimo_nome"] . "</td>
                       <td>
-                      <!-- Botão de exclusão -->
                       <a href='#' class='btn btn-dark'>Alterar</a>
-                      <a class='btn btn-dark' href='excluir.php?id=" . $row["id"] . "&tabela=autor' 
-                      onclick='return confirmarExclusao();'>Excluir</a>
+                      
+                      <!-- Botão de exclusão -->
+                      <a class='btn btn-dark' data-bs-toggle='modal' data-bs-target='#exampleModal'>Excluir</a>
+                      <!-- Modal de confirmação para exclusão -->
+                          <div class='modal fade' id='exampleModal' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+                            <div class='modal-dialog'>
+                              <div class='modal-content'>
+                                <div class='modal-header'>
+                                  <h1 class='modal-title fs-5' id='exampleModalLabel'>Confirmar exclusão</h1>
+                                  <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+                                </div>
+                                <div class='modal-body'>
+                                  Você confirma a exclusão do registro?
+                                </div>
+                                <div class='modal-footer'>
+                                  <a type='button' class='btn btn-dark' data-bs-dismiss='modal'>Cancelar</a>
+                                  <a type='button' class='btn btn-danger' href='excluir.php?id=" . $row["id"] . "&tabela=autor'>Confirmar</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
                       </td>
                       </tr>";
               }
@@ -191,7 +220,7 @@
                     <td></td>
                     </tr>";
             }
-            
+
             ?>
           </tbody>
         </table>
@@ -214,7 +243,7 @@
           <tbody>
             <!--CONEXÃO COM O BANCO E WHILE BUSCANDO NO BD-->
             <?php
-            
+
             $sql = "SELECT id, genero FROM genero";
             $result = $conn->query($sql);
 
@@ -225,10 +254,28 @@
                       <th scope='row'>" . $row["id"] . "</th> 
                       <td>" . $row["genero"] . "</td>
                       <td>
-                      <!-- Botão de exclusão -->
                       <a href='#' class='btn btn-dark'>Alterar</a>
-                      <a class='btn btn-dark' href='excluir.php?id=" . $row["id"] . "&tabela=genero' 
-                      onclick='return confirmarExclusao();'>Excluir</a>
+
+                      <!-- Botão de exclusão -->
+                      <a class='btn btn-dark' data-bs-toggle='modal' data-bs-target='#exampleModal'>Excluir</a>
+                      <!-- Modal de confirmação para exclusão -->
+                          <div class='modal fade' id='exampleModal' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+                            <div class='modal-dialog'>
+                              <div class='modal-content'>
+                                <div class='modal-header'>
+                                  <h1 class='modal-title fs-5' id='exampleModalLabel'>Confirmar exclusão</h1>
+                                  <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+                                </div>
+                                <div class='modal-body'>
+                                  Você confirma a exclusão do registro?
+                                </div>
+                                <div class='modal-footer'>
+                                  <a type='button' class='btn btn-dark' data-bs-dismiss='modal'>Cancelar</a>
+                                  <a type='button' class='btn btn-danger' href='excluir.php?id=" . $row["id"] . "&tabela=genero'>Confirmar</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                       </td>
                       </tr>";
               }
@@ -239,7 +286,7 @@
                     <td></td>
                     </tr>";
             }
-            
+
             ?>
           </tbody>
         </table>
@@ -264,7 +311,7 @@
           <tbody>
             <!--CONEXÃO COM O BANCO E WHILE BUSCANDO NO BD-->
             <?php
-            
+
             $sql = "select id, editora, cnpj, concat(rua,', ', cidade,', ', bairro,', ', cep,', ', pais) as endereco from biblioteca_trabalho.editora;";
             $result = $conn->query($sql);
 
@@ -277,10 +324,28 @@
                       <td>" . $row["cnpj"] . "</td>
                       <td>" . $row["endereco"] . "</td>
                       <td>
-                      <!-- Botão de exclusão -->
                       <a href='#' class='btn btn-dark'>Alterar</a>
-                      <a class='btn btn-dark' href='excluir.php?id=" . $row["id"] . "&tabela=editora' 
-                      onclick='return confirmarExclusao();'>Excluir</a>
+
+                      <!-- Botão de exclusão -->
+                      <a class='btn btn-dark' data-bs-toggle='modal' data-bs-target='#exampleModal'>Excluir</a>
+                      <!-- Modal de confirmação para exclusão -->
+                          <div class='modal fade' id='exampleModal' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+                            <div class='modal-dialog'>
+                              <div class='modal-content'>
+                                <div class='modal-header'>
+                                  <h1 class='modal-title fs-5' id='exampleModalLabel'>Confirmar exclusão</h1>
+                                  <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+                                </div>
+                                <div class='modal-body'>
+                                  Você confirma a exclusão do registro?
+                                </div>
+                                <div class='modal-footer'>
+                                  <a type='button' class='btn btn-dark' data-bs-dismiss='modal'>Cancelar</a>
+                                  <a type='button' class='btn btn-danger' href='excluir.php?id=" . $row["id"] . "&tabela=editora'>Confirmar</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                       </td>
                       </tr>";
               }
@@ -293,7 +358,6 @@
                     <td></td>
                     </tr>";
             }
-            $conn->close();
             ?>
           </tbody>
         </table>

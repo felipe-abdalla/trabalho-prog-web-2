@@ -26,7 +26,8 @@
   '" . $numeroEdicaoLivro . "', '" . $autor_ID . "', '" . $genero_ID . "', '" . $editora_ID . "')";
 
   if ($conn->query($sql) === TRUE) {
-    header("Location: cadastrarLivro.php");
+    $last_id = $conn->insert_id;
+    header("Location: cadastrarLivro.php?last_id=$last_id");
   } else {
     echo "Erro ao efetuar cadastro: " . $sql . "<br>" . $conn->error;
     echo "<a class='btn btn-dark' href='./Gerenciar.php'>Voltar</a>";
