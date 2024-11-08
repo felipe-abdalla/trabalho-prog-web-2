@@ -109,10 +109,14 @@
       <div class="carousel-inner">
         <!-- Imagem atual -->
         <div class="carousel-item active">
-          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-          </svg>
+
+        
+        <img class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false" src="./img/autor.jpg" alt="">
+          
+            <rect width="100%" height="100%" fill="var(--bs-secondary-color)" /> 
+        
+          
           <div class="container">
             <div class="carousel-caption text-start">
               <h1>Autores renomados</h1>

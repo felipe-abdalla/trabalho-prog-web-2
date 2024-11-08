@@ -21,7 +21,7 @@ if ($cnpjEditora != null && $cnpjEditora != "") {
             if ($ruaEditora != null && $ruaEditora != "") {
                 if ($cidadeEditora != null && $cidadeEditora != "") {
                     if ($paisEditora != null && $paisEditora != "") {
-                        if ($nomeEditora != null && $editora != "") {
+                        if ($nomeEditora != null && $nomeEditora != "") {
                             if ($id != null && $id != "") {
 
                                 if ($id != null && $id != "") {

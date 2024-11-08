@@ -48,7 +48,7 @@
     <br><br><br><br><br>
 
     <section class="container">
-      <h2>Cadastro de Editora</h2>
+      <h2 id="titulo">Cadastro de Editora</h2>
       <br>
       <form class="row g-3" action="gerenciarEditora.php" method="POST" id="frmCadastroEditora">
         <div class="col-12">
@@ -87,7 +87,7 @@
             placeholder="Digite o CEP da editora (apenas números)" required>
         </div>
         <div class="col-12">
-          <button type="submit" class="btn btn-dark">Cadastrar</button>
+          <button type="submit" class="btn btn-dark" id="btnCadastrar">Cadastrar</button>
           <a class="btn btn-dark" href="./Gerenciar.php">Voltar</a>
           <div id="liveAlertPlaceholder"><br></div>
         </div>
