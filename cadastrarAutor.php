@@ -48,9 +48,9 @@
     <br><br><br><br><br>
 
     <section class="container">
-      <h2>Cadastro de Autor</h2>
+      <h2 id="titulo">Cadastro de Autor</h2>
       <br>
-      <form class="row g-3" action="gerenciarAutor.php" method="POST">
+      <form class="row g-3" action="gerenciarAutor.php" method="POST" id="frmCadastroAutor">
         <div class="col-12">
           <label for="primeiroNomeAutor" class="form-label">Nome</label>
           <input type="text" class="form-control" id="primeiroNomeAutor" name="primeiroNomeAutor"
@@ -62,14 +62,40 @@
             placeholder="Digite o último nome do autor">
         </div>
         <div class="col-12">
-          <button type="submit" class="btn btn-dark">Cadastrar</button>
+          <button type="submit" class="btn btn-dark" id="btnCadastrar">Cadastrar</button>
           <a class="btn btn-dark" href="./Gerenciar.php">Voltar</a>
           <div id="liveAlertPlaceholder"><br></div>
         </div>
+        <input type="hidden" name="id" value="" id="idAutor">
       </form>
     </section>
 
-  <!--SCRIPT para exibir alerta de confirmação de cadastro-->
+    <!--CÓDIGO PARA VERIFICAR SE HÁ PARAMETROS NO LINK E PROMOVER A ALTERAÇÃO DA ARVORE DOM E PERMITIR A ALTERAÇÃO DO CÓDIGO-->
+    <?php
+      if (isset($_GET['ultimo_nome'])) {
+        $ultimo_nome = $_GET["ultimo_nome"];
+        if ($ultimo_nome != null && $ultimo_nome != "") {
+          $primeiro_nome = $_GET["primeiro_nome"];
+          if ($primeiro_nome != null && $primeiro_nome != "") {
+            $id = $_GET["id"];
+            if ($id != null && $id != "") {
+            echo "
+                <script>
+                    document.getElementById('primeiroNomeAutor').value = '" . $primeiro_nome . "';
+                    document.getElementById('ultimoNomeAutor').value = '" . $ultimo_nome . "';
+                    document.getElementById('btnCadastrar').innerHTML = 'Alterar';
+                    document.getElementById('titulo').innerHTML = 'Alteração de Autor';
+                    let frm = document.getElementById('frmCadastroAutor').action='alterarAutor.php';
+                    document.getElementById('idAutor').value = '" . $id . "';
+                </script>
+                ";
+            }
+          }
+        }
+      }
+    ?>
+
+    <!--SCRIPT para exibir alerta de confirmação de cadastro-->
     <script>
       const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
       const appendAlert = (message, type) => {
@@ -85,9 +111,9 @@
 
       const alertTrigger = document.getElementById('last_id')
       <?php
-        $last_id = $_GET['last_id'];
-        echo "
-        if (". $last_id ." != 0) {
+      $last_id = $_GET['last_id'];
+      echo "
+        if (" . $last_id . " != 0) {
           appendAlert('Cadastro efetuado com sucesso!', 'success')
         }";
 

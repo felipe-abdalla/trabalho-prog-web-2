@@ -186,7 +186,7 @@
                       <td>" . $row["primeiro_nome"] . "</td>
                       <td>" . $row["ultimo_nome"] . "</td>
                       <td>
-                      <a href='#' class='btn btn-dark'>Alterar</a>
+                      <a href='cadastrarAutor.php?id=" . $row["id"] . "&primeiro_nome=" . $row["primeiro_nome"] . "&ultimo_nome=" . $row["ultimo_nome"] . "' class='btn btn-dark'>Alterar</a>
                       
                       <!-- Botão de exclusão -->
                       <a class='btn btn-dark' data-bs-toggle='modal' data-bs-target='#exampleModal'>Excluir</a>
