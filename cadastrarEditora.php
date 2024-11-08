@@ -15,77 +15,132 @@
 
   <header data-bs-theme="dark">
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Inventário</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./index.php">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./exibirAutores.php">Autores</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./exibirGeneros.php">Generos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./exibirEditoras.php">Editoras</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./Gerenciar.php">Gerenciar</a>
-                    </li>
-                </ul>
-            </div>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Inventário</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./index.php">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./exibirAutores.php">Autores</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./exibirGeneros.php">Generos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./exibirEditoras.php">Editoras</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./Gerenciar.php">Gerenciar</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
   </header>
 
   <main>
     <br><br><br><br><br>
-    
+
     <section class="container">
       <h2>Cadastro de Editora</h2>
       <br>
-      <form class="row g-3" action="gerenciarEditora.php" method="POST">
+      <form class="row g-3" action="gerenciarEditora.php" method="POST" id="frmCadastroEditora">
         <div class="col-12">
           <label for="nomeEditora" class="form-label">Editora</label>
-          <input type="text" class="form-control" id="nomeEditora" name="nomeEditora" placeholder="Digite o nome da editora" required>
+          <input type="text" class="form-control" id="nomeEditora" name="nomeEditora"
+            placeholder="Digite o nome da editora" required>
         </div>
         <div class="col-12">
           <label for="cnpjEditora" class="form-label">CNPJ</label>
-          <input type="number" class="form-control" id="cnpjEditora" name="cnpjEditora" placeholder="Digite o CNPJ (apenas números)">
+          <input type="number" class="form-control" id="cnpjEditora" name="cnpjEditora"
+            placeholder="Digite o CNPJ (apenas números)">
         </div>
         <div class="col-6">
           <label for="paisEditora" class="form-label">País</label>
-          <input type="text" class="form-control" id="paisEditora" name="paisEditora" placeholder="Digite o país da editora" required>
+          <input type="text" class="form-control" id="paisEditora" name="paisEditora"
+            placeholder="Digite o país da editora" required>
         </div>
         <div class="col-6">
           <label for="cidadeEditora" class="form-label">Cidade</label>
-          <input type="text" class="form-control" id="cidadeEditora" name="cidadeEditora" placeholder="Digite a cidade da editora" required>
+          <input type="text" class="form-control" id="cidadeEditora" name="cidadeEditora"
+            placeholder="Digite a cidade da editora" required>
         </div>
         <div class="col-12">
           <label for="ruaEditora" class="form-label">Rua</label>
-          <input type="text" class="form-control" id="ruaEditora" name="ruaEditora" placeholder="Digite a rua da editora" required>
+          <input type="text" class="form-control" id="ruaEditora" name="ruaEditora"
+            placeholder="Digite a rua da editora" required>
         </div>
         <div class="col-6">
           <label for="bairroEditora" class="form-label">Bairro</label>
-          <input type="text" class="form-control" id="bairroEditora" name="bairroEditora" placeholder="Digite o bairro da editora" required>
+          <input type="text" class="form-control" id="bairroEditora" name="bairroEditora"
+            placeholder="Digite o bairro da editora" required>
         </div>
         <div class="col-6">
           <label for="cepEditora" class="form-label">CEP</label>
-          <input type="number" class="form-control" id="cepEditora" name="cepEditora" placeholder="Digite o CEP da editora (apenas números)" required>
+          <input type="number" class="form-control" id="cepEditora" name="cepEditora"
+            placeholder="Digite o CEP da editora (apenas números)" required>
         </div>
         <div class="col-12">
           <button type="submit" class="btn btn-dark">Cadastrar</button>
           <a class="btn btn-dark" href="./Gerenciar.php">Voltar</a>
           <div id="liveAlertPlaceholder"><br></div>
         </div>
+        <input type="hidden" name="id" value="" id="idEditora">
       </form>
     </section>
+
+    <!--CÓDIGO PARA VERIFICAR SE HÁ PARAMETROS NO LINK E PROMOVER A ALTERAÇÃO DA ARVORE DOM E PERMITIR A ALTERAÇÃO DO CÓDIGO-->
+    <?php
+    if (isset($_GET['cnpj'])) {
+      $cnpj = $_GET["cnpj"];
+      if ($cnpj != null && $cnpj != "") {
+        $cep = $_GET["cep"];
+        if ($cep != null && $cep != "") {
+          $bairro = $_GET["bairro"];
+          if ($bairro != null && $bairro != "") {
+            $rua = $_GET["rua"];
+            if ($rua != null && $rua != "") {
+              $cidade = $_GET["cidade"];
+              if ($cidade != null && $cidade != "") {
+                $pais = $_GET["pais"];
+                if ($pais != null && $pais != "") {
+                  $editora = $_GET["editora"];
+                  if ($editora != null && $editora != "") {
+                    $id = $_GET["id"];
+                    if ($id != null && $id != "") {
+                      echo "
+            <script>
+                document.getElementById('nomeEditora').value = '" . ($editora) . "';
+                document.getElementById('paisEditora').value = '" . ($pais) . "';
+                document.getElementById('cidadeEditora').value = '" . ($cidade) . "';
+                document.getElementById('ruaEditora').value = '" . ($rua) . "';
+                document.getElementById('bairroEditora').value = '" . ($bairro) . "';
+                document.getElementById('cepEditora').value = '" . ($cep) . "';
+                document.getElementById('cnpjEditora').value = '" . ($cnpj) . "';
+                document.getElementById('btnCadastrar').innerHTML = 'Alterar';
+                document.getElementById('titulo').innerHTML = 'Alteração da Editora';
+                let frm = document.getElementById('frmCadastroEditora').action='alterarEditora.php';
+                document.getElementById('idEditora').value = '" . $id . "';
+            </script>
+        ";
+
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+      }
+    }
+    ?>
 
     <!--SCRIPT para exibir alerta de confirmação de cadastro-->
     <script>
@@ -103,9 +158,9 @@
 
       const alertTrigger = document.getElementById('last_id')
       <?php
-        $last_id = $_GET['last_id'];
-        echo "
-        if (". $last_id ." != 0) {
+      $last_id = $_GET['last_id'];
+      echo "
+        if (" . $last_id . " != 0) {
           appendAlert('Cadastro efetuado com sucesso!', 'success')
         }";
 

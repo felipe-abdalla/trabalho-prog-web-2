@@ -312,7 +312,7 @@
             <!--CONEXÃO COM O BANCO E WHILE BUSCANDO NO BD-->
             <?php
 
-            $sql = "select id, editora, cnpj, concat(rua,', ', cidade,', ', bairro,', ', cep,', ', pais) as endereco from biblioteca_trabalho.editora;";
+            $sql = "select id, editora, cnpj, rua, bairro, cidade, cep, pais, concat(rua,', ', cidade,', ', bairro,', ', cep,', ', pais) as endereco from biblioteca_trabalho.editora;";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
@@ -324,7 +324,15 @@
                       <td>" . $row["cnpj"] . "</td>
                       <td>" . $row["endereco"] . "</td>
                       <td>
-                      <a href='#' class='btn btn-dark'>Alterar</a>
+                      <a href='cadastrarEditora.php?id=" . $row["id"] . 
+                                               "&editora=" . $row["editora"] . 
+                                               "&rua=" . $row["rua"] . 
+                                               "&bairro=" . $row["bairro"] . 
+                                               "&cidade=" . $row["cidade"] . 
+                                               "&cep=" . $row["cep"] . 
+                                               "&pais=" . $row["pais"] . 
+                                               "&cnpj=" . $row["cnpj"] . 
+                                               "' class='btn btn-dark'>Alterar</a>
 
                       <!-- Botão de exclusão -->
                       <a class='btn btn-dark' data-bs-toggle='modal' data-bs-target='#excluirEditora'>Excluir</a>
