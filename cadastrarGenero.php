@@ -48,20 +48,42 @@
     <br><br><br><br><br>
     
     <section class="container">
-      <h2>Cadastro de Gênero</h2>
+      <h2 id="titulo">Cadastro de Gênero</h2>
       <br>
-      <form class="row g-3" action="gerenciarGenero.php" method="POST">
+      <form class="row g-3" action="gerenciarGenero.php" method="POST" id="frmCadastroGenero">
         <div class="col-12">
           <label for="nomeGenero" class="form-label">Gênero</label>
           <input type="text" class="form-control" id="nomeGenero" name="nomeGenero" placeholder="Digite o gênero" required>
         </div>
         <div class="col-12">
-          <button type="submit" class="btn btn-dark">Cadastrar</button>
+          <button type="submit" class="btn btn-dark" id="btnCadastrar">Cadastrar</button>
           <a class="btn btn-dark" href="./Gerenciar.php">Voltar</a>
           <div id="liveAlertPlaceholder"><br></div>
         </div>
+        <input type="hidden" name="id" value="" id="idGenero">
       </form>
     </section>
+
+    <!--CÓDIGO PARA VERIFICAR SE HÁ PARAMETROS NO LINK E PROMOVER A ALTERAÇÃO DA ARVORE DOM E PERMITIR A ALTERAÇÃO DO CÓDIGO-->
+    <?php
+      if (isset($_GET['genero'])) {
+        $genero = $_GET["genero"];
+        if ($genero != null && $genero != "") {
+          $id = $_GET["id"];
+          if ($id != null && $id != "") {
+            echo "
+                <script>
+                    document.getElementById('nomeGenero').value = '" . $genero . "';
+                    document.getElementById('btnCadastrar').innerHTML = 'Alterar';
+                    document.getElementById('titulo').innerHTML = 'Alteração de Gênero';
+                    let frm = document.getElementById('frmCadastroGenero').action='alterarGenero.php';
+                    document.getElementById('idGenero').value = '" . $id . "';
+                </script>
+                ";
+          }
+        }
+      }
+    ?>
 
     <!--SCRIPT para exibir alerta de confirmação de cadastro-->
     <script>

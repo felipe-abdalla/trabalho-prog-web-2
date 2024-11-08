@@ -114,9 +114,9 @@
                       <a href='#' class='btn btn-dark'>Alterar</a>
                       
                       <!-- Botão de exclusão -->
-                      <a class='btn btn-dark' data-bs-toggle='modal' data-bs-target='#exampleModal'>Excluir</a>
+                      <a class='btn btn-dark' data-bs-toggle='modal' data-bs-target='#excluirLivro'>Excluir</a>
                       <!-- Modal de confirmação para exclusão -->
-                          <div class='modal fade' id='exampleModal' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+                          <div class='modal fade' id='excluirLivro' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
                             <div class='modal-dialog'>
                               <div class='modal-content'>
                                 <div class='modal-header'>
@@ -189,9 +189,9 @@
                       <a href='cadastrarAutor.php?id=" . $row["id"] . "&primeiro_nome=" . $row["primeiro_nome"] . "&ultimo_nome=" . $row["ultimo_nome"] . "' class='btn btn-dark'>Alterar</a>
                       
                       <!-- Botão de exclusão -->
-                      <a class='btn btn-dark' data-bs-toggle='modal' data-bs-target='#exampleModal'>Excluir</a>
+                      <a class='btn btn-dark' data-bs-toggle='modal' data-bs-target='#excluirAutor'>Excluir</a>
                       <!-- Modal de confirmação para exclusão -->
-                          <div class='modal fade' id='exampleModal' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+                          <div class='modal fade' id='excluirAutor' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
                             <div class='modal-dialog'>
                               <div class='modal-content'>
                                 <div class='modal-header'>
@@ -254,12 +254,12 @@
                       <th scope='row'>" . $row["id"] . "</th> 
                       <td>" . $row["genero"] . "</td>
                       <td>
-                      <a href='#' class='btn btn-dark'>Alterar</a>
+                      <a href='cadastrarGenero.php?id=" . $row["id"] . "&genero=" . $row["genero"] . "' class='btn btn-dark'>Alterar</a>
 
                       <!-- Botão de exclusão -->
-                      <a class='btn btn-dark' data-bs-toggle='modal' data-bs-target='#exampleModal'>Excluir</a>
+                      <a class='btn btn-dark' data-bs-toggle='modal' data-bs-target='#excluirGenero'>Excluir</a>
                       <!-- Modal de confirmação para exclusão -->
-                          <div class='modal fade' id='exampleModal' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+                          <div class='modal fade' id='excluirGenero' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
                             <div class='modal-dialog'>
                               <div class='modal-content'>
                                 <div class='modal-header'>
@@ -327,9 +327,9 @@
                       <a href='#' class='btn btn-dark'>Alterar</a>
 
                       <!-- Botão de exclusão -->
-                      <a class='btn btn-dark' data-bs-toggle='modal' data-bs-target='#exampleModal'>Excluir</a>
+                      <a class='btn btn-dark' data-bs-toggle='modal' data-bs-target='#excluirEditora'>Excluir</a>
                       <!-- Modal de confirmação para exclusão -->
-                          <div class='modal fade' id='exampleModal' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+                          <div class='modal fade' id='excluirEditora' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
                             <div class='modal-dialog'>
                               <div class='modal-content'>
                                 <div class='modal-header'>
