@@ -13,8 +13,6 @@ $ruaEditora = $_POST['ruaEditora'];
 $bairroEditora = $_POST['bairroEditora'];
 $cepEditora = $_POST['cepEditora'];
 
-
-
 if ($cnpjEditora != null && $cnpjEditora != "") {
     if ($cepEditora != null && $cepEditora != "") {
         if ($bairroEditora != null && $bairroEditora != "") {
@@ -23,7 +21,6 @@ if ($cnpjEditora != null && $cnpjEditora != "") {
                     if ($paisEditora != null && $paisEditora != "") {
                         if ($nomeEditora != null && $nomeEditora != "") {
                             if ($id != null && $id != "") {
-
                                 if ($id != null && $id != "") {
                                     // Create connection
                                     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -32,15 +29,14 @@ if ($cnpjEditora != null && $cnpjEditora != "") {
                                         die("Falha na conexão: " . $conn->connect_error);
                                     }
 
-
                                     $sql = "UPDATE editora SET editora='" . $nomeEditora . "', 
-                               rua='" . $ruaEditora . "', 
-                               bairro='" . $bairroEditora . "', 
-                               cidade='" . $cidadeEditora . "', 
-                               cep='" . $cepEditora . "', 
-                               pais='" . $paisEditora . "', 
-                               cnpj='" . $cnpjEditora . "' 
-                               WHERE id='" . $id . "';";
+                                    rua='" . $ruaEditora . "', 
+                                    bairro='" . $bairroEditora . "', 
+                                    cidade='" . $cidadeEditora . "', 
+                                    cep='" . $cepEditora . "', 
+                                    pais='" . $paisEditora . "', 
+                                    cnpj='" . $cnpjEditora . "' 
+                                    WHERE id='" . $id . "';";
 
                                     if ($conn->query($sql) === TRUE) {
                                         header('Location: Gerenciar.php');
@@ -48,8 +44,6 @@ if ($cnpjEditora != null && $cnpjEditora != "") {
                                         echo "Erro ao efetuar cadastro: " . $sql . "<br>" . $conn->error;
                                         echo "<a class='btn btn-dark' href='./Gerenciar.php'>Voltar</a>";
                                     }
-
-
 
                                     $conn->close();
                                 }
@@ -60,8 +54,5 @@ if ($cnpjEditora != null && $cnpjEditora != "") {
             }
         }
     }
-
 }
-
-
 ?>

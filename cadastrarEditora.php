@@ -63,37 +63,37 @@
         <div class="col-12">
           <label for="nomeEditora" class="form-label">Editora</label>
           <input type="text" class="form-control" id="nomeEditora" name="nomeEditora"
-            placeholder="Digite o nome da editora" required>
+            placeholder="Digite o nome da editora" required maxlength="255">
         </div>
         <div class="col-12">
           <label for="cnpjEditora" class="form-label">CNPJ</label>
-          <input type="number" class="form-control" id="cnpjEditora" name="cnpjEditora"
-            placeholder="Digite o CNPJ (apenas números)">
+          <input type="text" class="form-control" id="cnpjEditora" name="cnpjEditora"
+            placeholder="Digite o CNPJ (apenas números)" maxlength="14">
         </div>
         <div class="col-6">
           <label for="paisEditora" class="form-label">País</label>
           <input type="text" class="form-control" id="paisEditora" name="paisEditora"
-            placeholder="Digite o país da editora" required>
+            placeholder="Digite o país da editora" required maxlength="255">
         </div>
         <div class="col-6">
           <label for="cidadeEditora" class="form-label">Cidade</label>
           <input type="text" class="form-control" id="cidadeEditora" name="cidadeEditora"
-            placeholder="Digite a cidade da editora" required>
+            placeholder="Digite a cidade da editora" required maxlength="45">
         </div>
         <div class="col-12">
           <label for="ruaEditora" class="form-label">Rua</label>
           <input type="text" class="form-control" id="ruaEditora" name="ruaEditora"
-            placeholder="Digite a rua da editora" required>
+            placeholder="Digite a rua da editora" required maxlength="255">
         </div>
         <div class="col-6">
           <label for="bairroEditora" class="form-label">Bairro</label>
           <input type="text" class="form-control" id="bairroEditora" name="bairroEditora"
-            placeholder="Digite o bairro da editora" required>
+            placeholder="Digite o bairro da editora" required maxlength="255">
         </div>
         <div class="col-6">
           <label for="cepEditora" class="form-label">CEP</label>
-          <input type="number" class="form-control" id="cepEditora" name="cepEditora"
-            placeholder="Digite o CEP da editora (apenas números)" required>
+          <input type="text" class="form-control" id="cepEditora" name="cepEditora"
+            placeholder="Digite o CEP da editora (apenas números)" required maxlength="8">
         </div>
         <div class="col-12">
           <button type="submit" class="btn btn-dark" id="btnCadastrar">Cadastrar</button>
@@ -124,20 +124,20 @@
                     $id = $_GET["id"];
                     if ($id != null && $id != "") {
                       echo "
-            <script>
-                document.getElementById('nomeEditora').value = '" . ($editora) . "';
-                document.getElementById('paisEditora').value = '" . ($pais) . "';
-                document.getElementById('cidadeEditora').value = '" . ($cidade) . "';
-                document.getElementById('ruaEditora').value = '" . ($rua) . "';
-                document.getElementById('bairroEditora').value = '" . ($bairro) . "';
-                document.getElementById('cepEditora').value = '" . ($cep) . "';
-                document.getElementById('cnpjEditora').value = '" . ($cnpj) . "';
-                document.getElementById('btnCadastrar').innerHTML = 'Alterar';
-                document.getElementById('titulo').innerHTML = 'Alteração da Editora';
-                let frm = document.getElementById('frmCadastroEditora').action='alterarEditora.php';
-                document.getElementById('idEditora').value = '" . $id . "';
-            </script>
-        ";
+                        <script>
+                            document.getElementById('nomeEditora').value = '" . ($editora) . "';
+                            document.getElementById('paisEditora').value = '" . ($pais) . "';
+                            document.getElementById('cidadeEditora').value = '" . ($cidade) . "';
+                            document.getElementById('ruaEditora').value = '" . ($rua) . "';
+                            document.getElementById('bairroEditora').value = '" . ($bairro) . "';
+                            document.getElementById('cepEditora').value = '" . ($cep) . "';
+                            document.getElementById('cnpjEditora').value = '" . ($cnpj) . "';
+                            document.getElementById('btnCadastrar').innerHTML = 'Alterar';
+                            document.getElementById('titulo').innerHTML = 'Alteração da Editora';
+                            let frm = document.getElementById('frmCadastroEditora').action='alterarEditora.php';
+                            document.getElementById('idEditora').value = '" . $id . "';
+                        </script>
+                      ";
 
                     }
                   }

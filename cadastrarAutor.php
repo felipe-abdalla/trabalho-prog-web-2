@@ -63,12 +63,12 @@
         <div class="col-12">
           <label for="primeiroNomeAutor" class="form-label">Nome</label>
           <input type="text" class="form-control" id="primeiroNomeAutor" name="primeiroNomeAutor"
-            placeholder="Digite o primeiro nome do autor" required>
+            placeholder="Digite o primeiro nome do autor" required maxlength="255">
         </div>
         <div class="col-12">
           <label for="ultimoNomeAutor" class="form-label">Último nome</label>
           <input type="text" class="form-control" id="ultimoNomeAutor" name="ultimoNomeAutor"
-            placeholder="Digite o último nome do autor">
+            placeholder="Digite o último nome do autor" required maxlength="255">
         </div>
         <div class="col-12">
           <button type="submit" class="btn btn-dark" id="btnCadastrar">Cadastrar</button>

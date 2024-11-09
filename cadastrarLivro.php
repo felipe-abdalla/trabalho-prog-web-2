@@ -64,18 +64,18 @@
     <br><br><br><br><br>
 
     <section class="container">
-      <h2>Cadastro de Livro</h2>
+      <h2 id="titulo">Cadastro de Livro</h2>
       <br>
-      <form class="row g-3" action="gerenciarLivro.php" method="POST">
+      <form class="row g-3" action="gerenciarLivro.php" method="POST" id="frmCadastroLivro">
         <div class="col-12">
           <label for="nomeLivro" class="form-label">Livro</label>
           <input type="text" class="form-control" id="nomeLivro" name="nomeLivro" placeholder="Digite o título do livro"
-            required>
+            required maxlength="255">
         </div>
         <div class="col-6">
           <label for="isbnLivro" class="form-label">ISBN</label>
           <input type="text" class="form-control" id="isbnLivro" name="isbnLivro" placeholder="Digite o ISBN do livro"
-            required>
+            required maxlength="255">
         </div>
         <div class="col-6">
           <label for="qtdLivro" class="form-label">Quantidade</label>
@@ -94,7 +94,7 @@
 
         <?php
         // Consulta SQL para buscar todos os autores
-        $sql = "SELECT ID, primeiro_nome FROM autor";
+        $sql = "SELECT ID, concat(primeiro_nome, ' ', ultimo_nome) as nomeAutor FROM autor";
         $result = $conn->query($sql);
         ?>
 
@@ -106,7 +106,7 @@
             // Loop para percorrer os resultados e exibir cada autor em um <option>
             if ($result->num_rows > 0) {
               while ($row = $result->fetch_assoc()) {
-                echo "<option value='" . $row['ID'] . "'>" . $row['primeiro_nome'] . "</option>";
+                echo "<option value='" . $row['ID'] . "'>" . $row['nomeAutor'] . "</option>";
               }
             }
             ?>
@@ -165,10 +165,11 @@
 
 
         <div class="col-12">
-          <button type="submit" class="btn btn-dark">Cadastrar</button>
+          <button type="submit" class="btn btn-dark" id="btnCadastrar">Cadastrar</button>
           <a class="btn btn-dark" href="./Gerenciar.php">Voltar</a>
           <div id="liveAlertPlaceholder"><br></div>
         </div>
+        <input type="hidden" name="id" value="" id="idLivro">
       </form>
       
       <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -188,6 +189,54 @@
 
     </section>
 
+    <!--CÓDIGO PARA VERIFICAR SE HÁ PARAMETROS NO LINK E PROMOVER A ALTERAÇÃO DA ARVORE DOM E PERMITIR A ALTERAÇÃO DO CÓDIGO-->
+    <?php
+    if (isset($_GET['idEditora'])) {
+      $idEditora = $_GET["idEditora"];
+      if ($idEditora != null && $idEditora != "") {
+        $idGenero = $_GET["idGenero"];
+        if ($idGenero != null && $idGenero != "") {
+          $idAutor = $_GET["idAutor"];
+          if ($idAutor != null && $idAutor != "") {
+            $nro_edicao = $_GET["nro_edicao"];
+            if ($nro_edicao != null && $nro_edicao != "") {
+              $ano_publicacao = $_GET["ano_publicacao"];
+              if ($ano_publicacao != null && $ano_publicacao != "") {
+                $qtd = $_GET["qtd"];
+                if ($qtd != null && $qtd != "") {
+                  $isbn = $_GET["isbn"];
+                  if ($isbn != null && $isbn != "") {
+                    $livro = $_GET["livro"];
+                    if ($livro != null && $livro != "") {
+                      $id = $_GET["id"];
+                      if ($id != null && $id != "") { 
+                            echo "
+                              <script>
+                                  document.getElementById('nomeLivro').value = '" . ($livro) . "';
+                                  document.getElementById('isbnLivro').value = '" . ($isbn) . "';
+                                  document.getElementById('qtdLivro').value = '" . ($qtd) . "';
+                                  document.getElementById('anoPublicacaoLivro').value = '" . ($ano_publicacao) . "';
+                                  document.getElementById('numeroEdicaoLivro').value = '" . ($nro_edicao) . "';
+                                  document.getElementById('autorLivro').value = '" . ($idAutor) . "';
+                                  document.getElementById('generoLivro').value = '" . ($idGenero) . "';
+                                  document.getElementById('editoraLivro').value = '" . ($idEditora) . "';
+                                  document.getElementById('btnCadastrar').innerHTML = 'Alterar';
+                                  document.getElementById('titulo').innerHTML = 'Alteração de Livro';
+                                  let frm = document.getElementById('frmCadastroLivro').action='alterarLivro.php';
+                                  document.getElementById('idLivro').value = '" . $id . "';
+                              </script>
+                            ";
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+    ?>
 
     <!--SCRIPT para exibir alerta de confirmação de cadastro-->
     <script>

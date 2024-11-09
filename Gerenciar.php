@@ -90,7 +90,10 @@
               die("Falha na conexão: " . $conn->connect_error);
             }
 
-            $sql = "SELECT l.id, livro, isbn, qtd, ano_publicacao, nro_edicao, a.primeiro_nome as autor, g.genero as genero, e.editora as editora
+            $sql = "SELECT l.id, livro, isbn, qtd, ano_publicacao, nro_edicao, 
+            a.id as idAutor, concat(primeiro_nome, ' ', ultimo_nome) as autor, 
+            g.id as idGenero, g.genero as genero, 
+            e.id as idEditora, e.editora as editora
             FROM livro l
             JOIN autor a ON l.autor_ID = a.ID
             JOIN genero g ON l.genero_ID = g.ID
@@ -111,7 +114,17 @@
                       <td>" . $row["genero"] . "</td>
                       <td>" . $row["editora"] . "</td>
                       <td>
-                      <a href='#' class='btn btn-dark'>Alterar</a>
+                      <a href='
+                        cadastrarLivro.php?id=" . $row["id"] . 
+                        "&livro=" . $row["livro"] . 
+                        "&isbn=" . $row["isbn"] . 
+                        "&qtd=" . $row["qtd"] . 
+                        "&ano_publicacao=" . $row["ano_publicacao"] . 
+                        "&nro_edicao=" . $row["nro_edicao"] . 
+                        "&idAutor=" . $row["idAutor"] . 
+                        "&idGenero=" . $row["idGenero"] . 
+                        "&idEditora=" . $row["idEditora"] . 
+                        "' class='btn btn-dark'>Alterar</a>
                       
                       <!-- Botão de exclusão -->
                       <a class='btn btn-dark' data-bs-toggle='modal' data-bs-target='#excluirLivro'>Excluir</a>

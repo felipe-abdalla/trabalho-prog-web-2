@@ -62,7 +62,7 @@
       <form class="row g-3" action="gerenciarGenero.php" method="POST" id="frmCadastroGenero">
         <div class="col-12">
           <label for="nomeGenero" class="form-label">Gênero</label>
-          <input type="text" class="form-control" id="nomeGenero" name="nomeGenero" placeholder="Digite o gênero" required>
+          <input type="text" class="form-control" id="nomeGenero" name="nomeGenero" placeholder="Digite o gênero" required maxlength="255">
         </div>
         <div class="col-12">
           <button type="submit" class="btn btn-dark" id="btnCadastrar">Cadastrar</button>

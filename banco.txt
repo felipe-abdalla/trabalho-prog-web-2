@@ -20,7 +20,7 @@ USE `biblioteca_trabalho` ;
 CREATE TABLE IF NOT EXISTS `biblioteca_trabalho`.`autor` (
   `ID` INT NOT NULL AUTO_INCREMENT,
   `primeiro_nome` VARCHAR(255) NOT NULL,
-  `ultimo_nome` VARCHAR(255) NULL DEFAULT NULL,
+  `ultimo_nome` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`ID`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
