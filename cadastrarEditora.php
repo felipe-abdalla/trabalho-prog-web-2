@@ -47,6 +47,15 @@
   <main>
     <br><br><br><br><br>
 
+    <section class="container text-center">
+      <div class="center-align btn-group">
+        <a href="cadastrarLivro.php" class="btn btn-outline-dark">Cadastrar Livro</a>
+        <a href="cadastrarAutor.php" class="btn btn-outline-dark">Cadastrar Autor</a>
+        <a href="cadastrarGenero.php" class="btn btn-outline-dark">Cadastrar Genero</a>
+        <a href="cadastrarEditora.php" class="btn btn-outline-dark">Cadastrar Editora</a>
+      </div>
+    </section>
+
     <section class="container">
       <h2 id="titulo">Cadastro de Editora</h2>
       <br>

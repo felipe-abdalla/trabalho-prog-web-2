@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,22 +30,27 @@ if ($conn->connect_error) {
   die("Falha na conexão: " . $conn->connect_error);
 }
 
-// sql to delete a record
-$sql = "DELETE FROM `biblioteca_trabalho`.`" . $tabela . "` WHERE (`ID` = " . $id . ");";
+try {
+  // Preparar o comando SQL
+  $sql = "DELETE FROM `biblioteca_trabalho`.`" . $tabela . "` WHERE `ID` = " . $id;
 
-if ($conn->query($sql) === TRUE) {
-  echo "Exclusão efetuada com sucesso.";
-  header("Location: Gerenciar.php");
-} else {
-  //echo "Erro ao realizar exclusão: " . $conn->error;
-  //echo "<br>";
-  //echo "<a class='btn btn-dark' href='./Gerenciar.php'>Voltar</a>";
-  //header("Location: Gerenciar.php?erro=". $conn->error);
+  // Executar a query de exclusão
+  if ($conn->query($sql) === TRUE) {
+      echo "Exclusão efetuada com sucesso.";
+      header("Location: Gerenciar.php");
+      exit;
+  } else {
+      throw new Exception("Erro ao realizar exclusão.");
+  }
 
+} catch (Exception $e) {
+  // Exibir erro e notificação personalizada
   echo '<br>
         <div class="container alert alert-dark alert-dismissible" role="alert">
         <div>
-        Nota: Para exluir um autor, gênero ou editor, ele não poderá estar vinculado à um livro.</div>
+        Erro ao realizar exclusão: ' . $e->getMessage() . '
+        <br><br>
+        Nota: Para excluir um autor, gênero ou editora, ele não poderá estar vinculado a um livro.</div>
         <br>
         <a class="btn btn-dark" href="./Gerenciar.php">Voltar</a>
       </div>';

@@ -172,10 +172,18 @@
       </form>
       
       <div class="alert alert-warning alert-dismissible fade show" role="alert">
-      <div>
+      <div class="text-center">
         Nota:
-        Para cadastrar um livro, é necessário que seja informado pelo menos um autor, gênero e editora.</div>
+        Para cadastrar um livro, é necessário que exista pelo menos um autor, gênero e editora.</div>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <br>
+        <section class="text-center">
+          <div class="center-align btn-group">
+            <a href="cadastrarAutor.php" class="btn btn-outline-dark">Cadastrar Autor</a>
+            <a href="cadastrarGenero.php" class="btn btn-outline-dark">Cadastrar Genero</a>
+            <a href="cadastrarEditora.php" class="btn btn-outline-dark">Cadastrar Editora</a>
+          </div>
+        </section>
       </div>
 
     </section>

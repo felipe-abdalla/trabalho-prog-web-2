@@ -108,50 +108,40 @@
       </div>
       <div class="carousel-inner">
         <!-- Imagem atual -->
-        <div class="carousel-item active">
-
-        
-        <img class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false" src="./img/autor.jpg" alt="">
-          
-            <rect width="100%" height="100%" fill="var(--bs-secondary-color)" /> 
-        
-          
+        <div class="carousel-item active" >
+          <img class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false" src="./img/autor.jpg" alt="" style="object-fit: cover;"> 
           <div class="container">
             <div class="carousel-caption text-start">
               <h1>Autores renomados</h1>
               <p class="opacity-75">
                 Conheça nossos autores cadastrados
               </p>
-              <p><a class="btn btn-lg btn-dark" href="exibirAutores.php">Ver autores</a></p>
+              <p><a class="btn btn-lg btn-light" href="exibirAutores.php">Ver autores</a></p>
             </div>
           </div>
         </div>
         <!-- Outra imagem -->
         <div class="carousel-item">
-          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-          </svg>
+          <img class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false" src="./img/genero.jpg" alt="" style="object-fit: cover;">
           <div class="container">
             <div class="carousel-caption">
               <h1>Gêneros diversos</h1>
               <p>Possuímos gêneros variados cadastrados na plataforma</p>
-              <p><a class="btn btn-lg btn-dark" href="exibirGeneros.php">Ver gêneros</a></p>
+              <p><a class="btn btn-lg btn-light" href="exibirGeneros.php">Ver gêneros</a></p>
             </div>
           </div>
         </div>
         <!-- Outra imagem -->
         <div class="carousel-item">
-          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-          </svg>
+          <img class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false" src="./img/editora.jpg" alt="" style="object-fit: cover;">
           <div class="container">
             <div class="carousel-caption text-end">
               <h1>Editoras criativas</h1>
               <p>As editoras cadastradas em nossa plataforma possuem alta distinção</p>
-              <p><a class="btn btn-lg btn-dark" href="exibirEditoras.php">Ver editoras</a></p>
+              <p><a class="btn btn-lg btn-light" href="exibirEditoras.php">Ver editoras</a></p>
             </div>
           </div>
         </div>
