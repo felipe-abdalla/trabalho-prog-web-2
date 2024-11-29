@@ -7,7 +7,6 @@
   $id = $_POST['id'];
   $nomeGenero = $_POST['nomeGenero'];
 
-
 if ($nomeGenero != null && $nomeGenero != "") {
     if ($id != null && $id != "") {
         // Create connection
@@ -29,7 +28,5 @@ if ($nomeGenero != null && $nomeGenero != "") {
         $conn->close();
     }
 }
-
-
 ?>
 

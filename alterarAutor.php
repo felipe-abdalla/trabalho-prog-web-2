@@ -8,7 +8,6 @@
   $primeiroNomeAutor = $_POST['primeiroNomeAutor'];
   $ultimoNomeAutor = $_POST['ultimoNomeAutor'];
 
-
 if ($ultimoNomeAutor != null && $ultimoNomeAutor != "") {
     if ($primeiroNomeAutor != null && $primeiroNomeAutor != "") {
         if ($id != null && $id != "") {

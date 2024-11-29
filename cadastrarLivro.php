@@ -10,7 +10,6 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
   integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-
 <body>
 
   <header data-bs-theme="dark">
@@ -45,7 +44,6 @@
   </header>
 
   <main>
-
     <?php
     // Configuração da conexão com o banco de dados
     $servername = "localhost";
@@ -62,7 +60,6 @@
     }
     ?>
     <br><br><br><br><br>
-
     <section class="container">
       <h2 id="titulo">Cadastro de Livro</h2>
       <br>
@@ -113,8 +110,6 @@
           </select>
         </div>
 
-
-
         <?php
         // Consulta SQL para buscar todos os autores
         $sql = "SELECT ID, genero FROM genero";
@@ -137,7 +132,6 @@
         </div>
 
         <?php
-
         // Consulta SQL para buscar todos os autores
         $sql = "SELECT ID, editora FROM editora";
         $result = $conn->query($sql);
@@ -163,7 +157,6 @@
         $conn->close();
         ?>
 
-
         <div class="col-12">
           <button type="submit" class="btn btn-dark" id="btnCadastrar">Cadastrar</button>
           <a class="btn btn-dark" href="./Gerenciar.php">Voltar</a>
@@ -186,7 +179,6 @@
           </div>
         </section>
       </div>
-
     </section>
 
     <!--CÓDIGO PARA VERIFICAR SE HÁ PARAMETROS NO LINK E PROMOVER A ALTERAÇÃO DA ARVORE DOM E PERMITIR A ALTERAÇÃO DO CÓDIGO-->
@@ -210,23 +202,22 @@
                     if ($livro != null && $livro != "") {
                       $id = $_GET["id"];
                       if ($id != null && $id != "") { 
-                            echo "
-                              <script>
-                                  document.getElementById('nomeLivro').value = '" . ($livro) . "';
-                                  document.getElementById('isbnLivro').value = '" . ($isbn) . "';
-                                  document.getElementById('qtdLivro').value = '" . ($qtd) . "';
-                                  document.getElementById('anoPublicacaoLivro').value = '" . ($ano_publicacao) . "';
-                                  document.getElementById('numeroEdicaoLivro').value = '" . ($nro_edicao) . "';
-                                  document.getElementById('autorLivro').value = '" . ($idAutor) . "';
-                                  document.getElementById('generoLivro').value = '" . ($idGenero) . "';
-                                  document.getElementById('editoraLivro').value = '" . ($idEditora) . "';
-                                  document.getElementById('btnCadastrar').innerHTML = 'Alterar';
-                                  document.getElementById('titulo').innerHTML = 'Alteração de Livro';
-                                  let frm = document.getElementById('frmCadastroLivro').action='alterarLivro.php';
-                                  document.getElementById('idLivro').value = '" . $id . "';
-                              </script>
-                            ";
-                          }
+                        echo "
+                          <script>
+                              document.getElementById('nomeLivro').value = '" . ($livro) . "';
+                              document.getElementById('isbnLivro').value = '" . ($isbn) . "';
+                              document.getElementById('qtdLivro').value = '" . ($qtd) . "';
+                              document.getElementById('anoPublicacaoLivro').value = '" . ($ano_publicacao) . "';
+                              document.getElementById('numeroEdicaoLivro').value = '" . ($nro_edicao) . "';
+                              document.getElementById('autorLivro').value = '" . ($idAutor) . "';
+                              document.getElementById('generoLivro').value = '" . ($idGenero) . "';
+                              document.getElementById('editoraLivro').value = '" . ($idEditora) . "';
+                              document.getElementById('btnCadastrar').innerHTML = 'Alterar';
+                              document.getElementById('titulo').innerHTML = 'Alteração de Livro';
+                              let frm = document.getElementById('frmCadastroLivro').action='alterarLivro.php';
+                              document.getElementById('idLivro').value = '" . $id . "';
+                          </script>
+                        ";
                         }
                       }
                     }
@@ -236,6 +227,7 @@
             }
           }
         }
+      }
     ?>
 
     <!--SCRIPT para exibir alerta de confirmação de cadastro-->

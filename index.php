@@ -14,13 +14,11 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
   <!-- Link para o arquivo css -->
   <link rel="stylesheet" href="css/style.css">
-
 
   <!-- CSS do carousel -->
   <link href="./carrossel.css" rel="stylesheet">
@@ -78,9 +76,6 @@
       </div>
     </nav>
   </header>
-
-
-
 
   <main>
     <?php
@@ -158,12 +153,9 @@
       </button>
     </div>
 
-
-    <!-- Marketing messaging and featurettes
+    <!-- Bloco central do site com a exibição dos livros cadastrados
   ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
-
+    <!-- Caso não haja registro, será exibido mensagem de que não há registros cadastrados -->
 
     <section class="container marketing">
       <div class="container row mx-auto g-4">
@@ -206,16 +198,14 @@
         </div>
       </div>
     </section>
-
-
   </main>
 
   <footer class="text-center">
     <section class="bg-dark text-light ">
       <h2 class="text-center mt-4 mb-4">Conheça a nossa plataforma</h2>
       <div class="d-flex flex-column align-items-center mt-4 pb-4">
-
         <div class="container row mx-auto g-4">
+          
           <div class="col-12 col-md-12 col-xxl-4">
             <div class="divs-facilidades mx-auto d-flex mb-3">
               <div> <i class="bi bi-x-diamond icons m-3 text-warning"></i></div>
@@ -253,7 +243,7 @@
     </section>
 
     <section class="py-3 my-0 bg-dark text-light">
-      2024 <i class="bi bi-c-circle"></i> Desenvolvido por alunos do TADS | Projeto
+      2024 <i class="bi bi-c-circle"></i> Desenvolvido por Guilherme, Wesley, Flávia e Felipe | Projeto
       fictício sem fins comerciais.
     </section>
   </footer>

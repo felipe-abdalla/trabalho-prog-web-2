@@ -140,6 +140,7 @@
                       </tr>";
               }
             } else {
+              /*As tags <td> são para completar a tabela e evitar a quebra dela*/ 
               echo "<tr>
                     <td>Nenhum registro encontrado</td>
                     <td></td>
